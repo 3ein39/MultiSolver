@@ -7,8 +7,8 @@ using namespace std;
 long long convertBinaryToDecimal(string number);
 string convertDecimalToBinary(long long number);
 
-long long converOctalToDecimal(string number);
-string converDecimalToOctal(long long number);
+long long convertOctalToDecimal(string number);
+string convertDecimalToOctal(long long number);
 
 long long convertHexDecimalToDecimal(string number);
 string convertDecimalToHexDecimal(long long number);
