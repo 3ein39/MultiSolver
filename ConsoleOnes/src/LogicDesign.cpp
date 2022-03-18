@@ -1,26 +1,56 @@
 #include "LogicDesign.h"
 #include <algorithm>
 #include <cmath>
-long long convertBinaryToDecimal(string number){
-    long long decimal_number = 0;
-    reverse(number.begin(),number.end());
-    for(int i = 0;i<number.size();i++)
-        decimal_number += pow(2,i)*(number[i]-'0');
-
-    return decimal_number;
-}
-
-string convertDecimalToBinary(long long number){
-    string binary_number = "";
-    while(number){
-        binary_number += (number%2+'0');
-        number/=2;
+#include <string>
+double convertBinaryToDecimal(string number){
+    long long decimal_number_int = 0;
+    double decimal_number_frac = 0;
+    int pos = number.find('.');
+    if(pos!=string::npos) {
+        string fraction_part = number.substr(pos+1);
+        for(int i = 0;i<fraction_part.size();i++)
+            decimal_number_frac += 1.0/pow(2,i+1)*(fraction_part[i]-'0');
     }
-    reverse(binary_number.begin(),binary_number.end());
-    return binary_number;
+    else
+        pos = number.size();
+    string integer_part = number.substr(0,pos);
+
+    reverse(integer_part.begin(),integer_part.end());
+
+    for(int i = 0;i<integer_part.size();i++)
+        decimal_number_int += pow(2,i)*(integer_part[i]-'0');
+
+
+
+    return decimal_number_int+decimal_number_frac;
 }
 
-long long convertOctalToDecimal(string number){
+string convertDecimalToBinary(double number){
+    string binary_number_int = "",binary_number_frac="";
+    int integer_part = (int)number;
+    double fractional_part = number - integer_part;
+
+    while(integer_part){
+        binary_number_int += (integer_part%2 +'0');
+        integer_part/=2;
+    }
+    int t=10;
+    while(t--&&fractional_part!=0){
+        fractional_part*=2;
+        binary_number_frac+=((int)fractional_part+'0');
+        if((int)fractional_part==1)
+            fractional_part-=1;
+        if(fractional_part>=2)
+            break;
+    }
+    reverse(binary_number_int.begin(),binary_number_int.end());
+    string result = binary_number_int;
+    if(binary_number_frac.find('1')!=string::npos)
+        result +="."+binary_number_frac;
+    return result;
+}
+
+double convertOctalToDecimal(string number){
     long long decimal_number = 0;
     reverse(number.begin(),number.end());
     for(int i = 0;i< number.size();i++)

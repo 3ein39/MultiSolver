@@ -4,10 +4,10 @@
 #include <string>
 using namespace std;
 
-long long convertBinaryToDecimal(string number);
-string convertDecimalToBinary(long long number);
+double convertBinaryToDecimal(string number);
+string convertDecimalToBinary(double number);
 
-long long convertOctalToDecimal(string number);
+double convertOctalToDecimal(string number);
 string convertDecimalToOctal(long long number);
 
 long long convertHexDecimalToDecimal(string number);
