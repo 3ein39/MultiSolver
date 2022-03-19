@@ -199,3 +199,36 @@ string convertDecimalToHexDecimal(long double number){
 
     return result;
 }
+
+string getFunctionFromTruthTable(int numberOfInputs, vector<int> &output) {
+
+    // given a truth table .. get the function
+    string function = "";
+
+    if (numberOfInputs == 3) {
+        string minTerms[8] = {"XYZ", "XYz", "XyZ", "Xyz",
+                              "xYZ", "xYz", "xyZ", "xyz"};
+        for (int i = 0; i < 8; i++) { // loop to get 8 inputs
+            if (output[i] == 1) function += minTerms[i] + " + ";
+        }
+        if (!function.empty()) {
+            function.pop_back();
+            function.pop_back();
+        }
+
+    } else if (numberOfInputs == 2) {
+        string minTerms[8] = {"XY", "Xy", "xY", "xy"};
+
+        for (int i = 0; i < 4; i++) {
+            int x;
+            cin >> x;
+            if (output[i] == 1) function += minTerms[i] + " + ";
+        }
+        if (!function.empty()) {
+            function.pop_back();
+            function.pop_back();
+        }
+    }
+    return function;
+}
+
