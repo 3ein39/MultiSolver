@@ -14,10 +14,6 @@ string convertDecimalToOctal(long double number);
 long double convertHexDecimalToDecimal(string number);
 string convertDecimalToHexDecimal(long double number);
 
-
-
-
-
-
+string getFunctionFromTruthTable(int numberOfInputs, vector<int> &output);
 
 #endif
