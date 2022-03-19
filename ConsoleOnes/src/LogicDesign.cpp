@@ -220,8 +220,6 @@ string getFunctionFromTruthTable(int numberOfInputs, vector<int> &output) {
         string minTerms[8] = {"XY", "Xy", "xY", "xy"};
 
         for (int i = 0; i < 4; i++) {
-            int x;
-            cin >> x;
             if (output[i] == 1) function += minTerms[i] + " + ";
         }
         if (!function.empty()) {
