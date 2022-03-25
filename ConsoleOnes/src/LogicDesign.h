@@ -18,7 +18,11 @@ string convertDecimalToHexDecimal(long double number);
 string convertBinaryToOctal(string number);
 string convertBinaryToHexDecimal(string number);
 
+string convertOctalToBinary(string number);
 string convertOctalToHexDecimal(string number);
+
+string convertHexDecimalToBinary(string number);
+string convertHexDecimalToOctal(string number);
 
 string getFunctionFromTruthTable(int numberOfInputs, vector<int> &output);
 

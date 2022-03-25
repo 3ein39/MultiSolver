@@ -209,10 +209,21 @@ string convertBinaryToHexDecimal(string number){
     return convertDecimalToHexDecimal(convertBinaryToDecimal(number));
 }
 
+string convertOctalToBinary(string number){
+    return convertDecimalToBinary(convertOctalToDecimal(number));
+}
+
 string convertOctalToHexDecimal(string number){
     return convertDecimalToHexDecimal(convertHexDecimalToDecimal(number));
 }
 
+string convertHexDecimalToBinary(string number){
+    return convertDecimalToBinary(convertHexDecimalToDecimal(number));
+}
+
+string convertHexDecimalToOctal(string number){
+    return convertDecimalToOctal(convertHexDecimalToDecimal(number));
+}
 
 string getFunctionFromTruthTable(int numberOfInputs, vector<int> &output) {
 
