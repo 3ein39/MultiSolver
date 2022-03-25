@@ -2,6 +2,7 @@
 #define LOGICDESIGN_H_
 #include <iostream>
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -13,6 +14,11 @@ string convertDecimalToOctal(long double number);
 
 long double convertHexDecimalToDecimal(string number);
 string convertDecimalToHexDecimal(long double number);
+
+string convertBinaryToOctal(string number);
+string convertBinaryToHexDecimal(string number);
+
+string convertOctalToHexDecimal(string number);
 
 string getFunctionFromTruthTable(int numberOfInputs, vector<int> &output);
 
