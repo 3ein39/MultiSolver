@@ -2,21 +2,18 @@
 #define LOGICDESIGN_H_
 #include <iostream>
 #include <string>
+
 using namespace std;
 
-long long convertBinaryToDecimal(string number);
-string convertDecimalToBinary(long long number);
+long double convertBinaryToDecimal(string number);
+string convertDecimalToBinary(long double number);
 
-long long converOctalToDecimal(string number);
-string converDecimalToOctal(long long number);
+long double convertOctalToDecimal(string number);
+string convertDecimalToOctal(long double number);
 
-long long convertHexDecimalToDecimal(string number);
-string convertDecimalToHexDecimal(long long number);
+long double convertHexDecimalToDecimal(string number);
+string convertDecimalToHexDecimal(long double number);
 
-
-
-
-
-
+string getFunctionFromTruthTable(int numberOfInputs, vector<int> &output);
 
 #endif
