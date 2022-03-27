@@ -2,6 +2,7 @@
 #include <algorithm>
 #include <cmath>
 #include <string>
+#include <vector>
 
 long double convertBinaryToDecimal(string number){
     long long decimal_number_int = 0;
@@ -198,6 +199,30 @@ string convertDecimalToHexDecimal(long double number){
 
 
     return result;
+}
+
+string convertBinaryToOctal(string number){
+    return convertDecimalToOctal(convertBinaryToDecimal(number));
+}
+
+string convertBinaryToHexDecimal(string number){
+    return convertDecimalToHexDecimal(convertBinaryToDecimal(number));
+}
+
+string convertOctalToBinary(string number){
+    return convertDecimalToBinary(convertOctalToDecimal(number));
+}
+
+string convertOctalToHexDecimal(string number){
+    return convertDecimalToHexDecimal(convertHexDecimalToDecimal(number));
+}
+
+string convertHexDecimalToBinary(string number){
+    return convertDecimalToBinary(convertHexDecimalToDecimal(number));
+}
+
+string convertHexDecimalToOctal(string number){
+    return convertDecimalToOctal(convertHexDecimalToDecimal(number));
 }
 
 string getFunctionFromTruthTable(int numberOfInputs, vector<int> &output) {
