@@ -1,4 +1,16 @@
-/snap/clion/184/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/snap/clion/184/bin/ninja/linux/ninja -G Ninja /home/hussein/Project/MultiSolver/ConsoleOnes
+/var/lib/snapd/snap/clion/189/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/var/lib/snapd/snap/clion/189/bin/ninja/linux/ninja -G Ninja -S /mnt/92067d8e-6164-4bf3-a65a-1a1cdca2d73b/projects/MultiSolver/ConsoleOnes -B /mnt/92067d8e-6164-4bf3-a65a-1a1cdca2d73b/projects/MultiSolver/ConsoleOnes/cmake-build-debug
+-- The C compiler identification is GNU 11.2.0
+-- The CXX compiler identification is GNU 11.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/hussein/Project/MultiSolver/ConsoleOnes/cmake-build-debug
+-- Build files have been written to: /mnt/92067d8e-6164-4bf3-a65a-1a1cdca2d73b/projects/MultiSolver/ConsoleOnes/cmake-build-debug
