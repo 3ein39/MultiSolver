@@ -5,15 +5,21 @@
 #include <vector>
 
 double convertBinaryToDecimal(std::string number){
-    long long decimal_number_int = 0;
-    double decimal_number_frac = 0;
-    int pos = number.find('.');
+    long long decimal_number_int = 0; // take integral part
 
-    if(pos!=std::string::npos) {
+    double decimal_number_frac = 0;// take fractional part
+
+    int pos = number.find('.'); // find . if number contain fraction
+
+
+    // calculate fractional part
+    if(pos != std::string::npos) {
         std::string fraction_part = number.substr(pos+1);
+
         for(int i = 0;i<fraction_part.size();i++)
             decimal_number_frac += 1.0/pow(2,i+1)*(fraction_part[i]-'0');
     }
+
     else
         pos = number.size();
 
@@ -21,10 +27,11 @@ double convertBinaryToDecimal(std::string number){
 
     reverse(integer_part.begin(),integer_part.end());
 
+    // calculate integral part part
     for(int i = 0;i<integer_part.size();i++)
         decimal_number_int += pow(2,i)*(integer_part[i]-'0');
 
-
+    // combine the whole number
     return decimal_number_int+decimal_number_frac;
 }
 
@@ -34,16 +41,18 @@ std::string convertDecimalToBinary(double number){
     int integer_part = (int)number;
     double fractional_part = number - integer_part;
 
+    //calculate integral part
     while(integer_part){
         binary_number_int += (integer_part%2 +'0');
         integer_part/=2;
     }
 
-
+    // calculate fractional part to some precision 10^-4
     int t=10;
-    while(t--&&fractional_part!=0){
+    while (t-- && fractional_part!=0) {
         fractional_part*=2;
         binary_number_frac+=((int)fractional_part+'0');
+
         if((int)fractional_part==1)
             fractional_part-=1;
         if(fractional_part>=2)
@@ -51,7 +60,9 @@ std::string convertDecimalToBinary(double number){
     }
 
     reverse(binary_number_int.begin(),binary_number_int.end());
+
     std::string result = binary_number_int;
+    //add . sign if the number contain fraction
     if(binary_number_frac.find('1')!=std::string::npos)
         result +="."+binary_number_frac;
 
@@ -131,7 +142,8 @@ double convertHexDecimalToDecimal(std::string number){
     double decimal_number_frac = 0;
     int pos = number.find('.');
 
-    for(int i = 0;i<number.size();i++){
+    // convert abcdf to 10 11 12 13 14 15 consecutively
+    for (int i = 0;i<number.size();i++) {
         if(number[i]>='a'&&number[i]<='f')
             number[i] -= 87;
         else if(number[i]>='A'&&number[i]<='F')
@@ -162,17 +174,20 @@ double convertHexDecimalToDecimal(std::string number){
 }
 
 std::string convertDecimalToHexDecimal(double number){
+
+
     std::string hex = "0123456789ABCDEF";
     std::string hex_number_int = "",hex_number_frac="";
     long long integer_part = number;
     double fractional_part = number - integer_part;
 
-    while(integer_part){
+    while (integer_part) {
+         // take number % 16 give me (0:15) idx from string hex above
         hex_number_int += hex[integer_part%16];
         integer_part/=16;
     }
 
-
+    // calculate fractional part to some precision 10^-13
     int t=10;
     while(t--&&fractional_part!=0){
         fractional_part*=16;
@@ -186,6 +201,7 @@ std::string convertDecimalToHexDecimal(double number){
 
     reverse(hex_number_int.begin(),hex_number_int.end());
     std::string result = hex_number_int;
+
     bool check_frac = false;
     for(int i = 0;i < hex_number_frac.size();i++)
         if(hex_number_frac[i]!=0){
@@ -200,6 +216,7 @@ std::string convertDecimalToHexDecimal(double number){
 
     return result;
 }
+
 
 std::string convertBinaryToOctal(std::string number){
     return convertDecimalToOctal(convertBinaryToDecimal(number));
@@ -232,24 +249,35 @@ std::string getFunctionFromTruthTable(int numberOfInputs, std::vector<int> &outp
 
     if (numberOfInputs == 3) {
         std::string minTerms[8] = {"XYZ", "XYz", "XyZ", "Xyz",
-                              "xYZ", "xYz", "xyZ", "xyz"};
+                                   "xYZ", "xYz", "xyZ", "xyz"};
+
+        bool first = true; // set (+) sign after all minTerms except for first one
         for (int i = 0; i < 8; i++) { // loop to get 8 inputs
-            if (output[i] == 1) function += minTerms[i] + " + ";
-        }
-        if (!function.empty()) {
-            function.pop_back();
-            function.pop_back();
+            if (output[i] == 1){
+                if(!first)
+                    function+=" + ";
+
+                function += minTerms[i];
+
+                first = false;
+            }
         }
 
     } else if (numberOfInputs == 2) {
-        std::string minTerms[8] = {"XY", "Xy", "xY", "xy"};
+        std::string minTerms[4] = {"XY", "Xy", "xY", "xy"};
+
+        bool first = true; // set (+) sign after all minTerms except for first one
 
         for (int i = 0; i < 4; i++) {
-            if (output[i] == 1) function += minTerms[i] + " + ";
-        }
-        if (!function.empty()) {
-            function.pop_back();
-            function.pop_back();
+            if (output[i] == 1) {
+
+                if(!first)
+                    function += " + ";
+
+                function += minTerms[i];
+
+                first = false;
+            }
         }
     }
     return function;
