@@ -1,4 +1,4 @@
- 
+
 
 #include <iostream>
 #include <string>
@@ -8,7 +8,7 @@
 #include <sstream> 
 #include <stdlib.h>
 using namespace std;
- 
+
 void adjoint(int** arr, int row, int col);
 void transpose(int** arr, int row, int col);
 void determinant(int** arr, int row, int col);
@@ -22,10 +22,10 @@ void Multiplication(int** arr1, int row1, int col1, int** arr2, int row2, int co
 
 
 int main()
-{     
+{
 	char userkey = 'y';
 	while (userkey == 'y')
-	{ 
+	{
 		int NumberOfMatrices;
 		cout << "             *****Welcome to matrices solver******\n";
 		cout << "please enter how many matrices do you want?\n";
@@ -37,7 +37,7 @@ int main()
 		switch (NumberOfMatrices)
 		{
 		case 1:
-		{ 
+		{
 			cout << "1. Transpose\n";
 			cout << "2. Special matrices\n";
 			cout << "3. Deterinment\n";
@@ -46,53 +46,81 @@ int main()
 			cout << "Input: ";
 			int OppertionIn1 = 0;
 			cin >> OppertionIn1;
-			int row, colum;
-			cout << "Enter rows and colums of matrix: ";
-			cin >> row >> colum;
-			cout << "\nEnter elements of matrix: \n";
-			int** arr = new int* [row];
-			for (int i = 0; i < row; i++)
-				arr[i] = new int[colum];
-			for (int i = 0; i < row; i++)
-				for (int j = 0; j < colum; j++)
-					cin >> arr[i][j];
-			if (row != colum)
+
+			if (OppertionIn1 > 5 || OppertionIn1 < 1)
 				cout << "Invalid input";
 			else
 			{
-				switch (OppertionIn1)
+				int row, colum;
+				cout << "Enter rows and colums of matrix: ";
+				cin >> row >> colum;
+				cout << "\nEnter elements of matrix: \n";
+				int** arr = new int* [row];
+				for (int i = 0; i < row; i++)
+					arr[i] = new int[colum];
+				for (int i = 0; i < row; i++)
+					for (int j = 0; j < colum; j++)
+						cin >> arr[i][j];
+
+				int x = 0;
+				if (row != colum)
+					x = 1;
+				else
 				{
-				case 1:
-					cout << "the transpose of the matrix \n";
-					transpose(arr, row, colum);
-					break;
-				case 2:
-					Symmetric(arr, row, colum);
-					SkewSymmetric(arr, row, colum);
-					Singular(arr, row, colum);
-					break;
-				case 3:
-					cout << "Determinant of the matrix\n";
-					determinant(arr, row, colum);
-					break;
-				case 4:
-					cout << "Adjoint of the matrix\n";
-					adjoint(arr, row, colum);
-					break;
-				case 5:
-					cout << "Inverse of the matrix\n";
-					Inverse(arr, row, colum);
-					break;
-				default:
-					cout << "Invalid input\n";
+					switch (OppertionIn1)
+					{
+					case 1:
+						cout << "the transpose of the matrix \n";
+						transpose(arr, row, colum);
+						break;
+					case 2:
+						if (x == 1)
+							cout << "Invalid input";
+						else
+						{
+							Symmetric(arr, row, colum);
+							SkewSymmetric(arr, row, colum);
+							Singular(arr, row, colum);
+						}
+						break;
+					case 3:
+						if (x == 1)
+							cout << "Invalid input";
+						else
+						{
+							cout << "Determinant of the matrix\n";
+							determinant(arr, row, colum);
+						}
+						break;
+					case 4:
+						if (x == 1)
+							cout << "Invalid input";
+						else
+						{
+							cout << "Adjoint of the matrix\n";
+							adjoint(arr, row, colum);
+						}
+						break;
+					case 5:
+						if (x == 1)
+							cout << "Invalid input";
+						else
+						{
+							cout << "Inverse of the matrix\n";
+							Inverse(arr, row, colum);
+						}
+						break;
+					default:
+						cout << "Invalid input\n";
+					}
 				}
 			}
 		}
-			break;
+		break;
 		case 2:
 			cout << "1. Addition\n";
 			cout << "2. Subtraction\n";
-			cout << "3. Multiplication\n"; 
+			cout << "3. Multiplication\n";
 			cout << "input: ";
 			int OppertionIn2 = 0;
 			cin >> OppertionIn2;
@@ -127,7 +155,7 @@ int main()
 					cout << "the sum is \n";
 					Addition(arr1, row1, colum1, arr2, row2, colum2);
 				}
-			break;
+				break;
 			case 2:
 				if (row1 != row2 || colum1 != colum2)
 					cout << "invalid input, please try again\n";
@@ -137,7 +165,7 @@ int main()
 				}
 				break;
 			case 3:
-				if (row2!=colum1)
+				if (row2 != colum1)
 					cout << "invalid input, please try again\n";
 				else {
 					cout << "the Multiplication is \n";
@@ -156,8 +184,8 @@ int main()
 //functions
 
 void Multiplication(int** arr1, int row1, int col1, int** arr2, int row2, int col2)
-{  
-	int mul = 0; 
+{
+	int mul = 0;
 	for (int i = 0; i < row1; ++i)
 	{
 		for (int j = 0; j < col2; ++j)
@@ -166,11 +194,11 @@ void Multiplication(int** arr1, int row1, int col1, int** arr2, int row2, int co
 			{
 				mul += arr1[i][k] * arr2[k][j];
 			}
-			cout << mul  << " ";
+			cout << mul << " ";
 			mul = 0;
 		}
 		cout << "\n";
-	} 
+	}
 }
 
 void Subtraction(int** arr1, int row1, int col1, int** arr2, int row2, int col2)
@@ -316,11 +344,16 @@ void Inverse(int** arr, int row, int col)
 		}
 		d = (1 / determinant);
 	}
-	else
+	else if(row==2)
 	{
 		determinant = (arr[0][0] * arr[1][1]) - (arr[0][1] * arr[1][0]);
 		if (determinant == 0)
 			state = 1;
+		else
+		{
+			cout << arr[1][1] << "  " << arr[0][1] * (-1) << endl;
+			cout << arr[1][0] * (-1) << "  " << arr[0][0] << endl;
+		}
 	}
 	if (state)
 		cout << "Invalid, because determinant = 0 ";
@@ -419,4 +452,3 @@ void transpose(int** arr, int row, int col)
 
 
 
- 
