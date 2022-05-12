@@ -3,7 +3,6 @@
 #include <iostream>
 #include <string>
 #include <cmath>
-#include <cmath>
 #include <algorithm>
 #include <cctype> 
 #include <sstream> 
@@ -28,7 +27,7 @@ int main()
 	while (userkey == 'y')
 	{
 		int NumberOfMatrices;
-		cout<< "             *****Welcome to matrices solver******\n";
+		cout << "             *****Welcome to matrices solver******\n";
 		cout << "please enter how many matrices do you want?\n";
 		cout << "1. 1 matrix\n";
 		cout << "2. 2 matrices\n";
@@ -53,7 +52,7 @@ int main()
 			else
 			{
 				int row, colum;
-				cout << "Enter number of rows and number of colums of matrix: ";
+				cout << "Enter rows and colums of matrix: ";
 				cin >> row >> colum;
 				cout << "\nEnter elements of matrix: \n";
 				int** arr = new int* [row];
@@ -62,61 +61,61 @@ int main()
 				for (int i = 0; i < row; i++)
 					for (int j = 0; j < colum; j++)
 						cin >> arr[i][j];
-				
+
 				int x = 0;
 				if (row != colum)
 					x = 1;
-
-				switch (OppertionIn1)
+				else
 				{
-				 case 1:
-					cout << "the transpose of the matrix \n";
-					transpose(arr, row, colum);
-					break;
-				 case 2:
-					if (x == 1)
-						cout << "Invalid input";
-					else
+					switch (OppertionIn1)
 					{
-						Symmetric(arr, row, colum);
-						SkewSymmetric(arr, row, colum);
-						Singular(arr, row, colum);
+					case 1:
+						cout << "the transpose of the matrix \n";
+						transpose(arr, row, colum);
+						break;
+					case 2:
+						if (x == 1)
+							cout << "Invalid input";
+						else
+						{
+							Symmetric(arr, row, colum);
+							SkewSymmetric(arr, row, colum);
+							Singular(arr, row, colum);
+						}
+						break;
+					case 3:
+						if (x == 1)
+							cout << "Invalid input";
+						else
+						{
+							cout << "Determinant of the matrix\n";
+							determinant(arr, row, colum);
+						}
+						break;
+					case 4:
+						if (x == 1)
+							cout << "Invalid input";
+						else
+						{
+							cout << "Adjoint of the matrix\n";
+							adjoint(arr, row, colum);
+						}
+						break;
+					case 5:
+						if (x == 1)
+							cout << "Invalid input";
+						else
+						{
+							cout << "Inverse of the matrix\n";
+							Inverse(arr, row, colum);
+						}
+						break;
+					default:
+						cout << "Invalid input\n";
 					}
-					break;
-				 case 3:
-					if (x == 1)
-						cout << "Invalid input";
-					else
-					{
-						cout << "Determinant of the matrix\n";
-						determinant(arr, row, colum);
-					}
-					break;
-				 case 4:
-					if (x == 1)
-						cout << "Invalid input";
-					else
-					{
-						cout << "Adjoint of the matrix\n";
-						adjoint(arr, row, colum);
-					}
-					break;
-				 case 5:
-					if (x == 1)
-						cout << "Invalid input";
-					else
-					{
-						cout << "Inverse of the matrix\n";
-						Inverse(arr, row, colum);
-					}
-					break;
-				 default:
-					cout << "Invalid input\n";
 				}
-
 			}
 		}
-
 		break;
 		case 2:
 			cout << "1. Addition\n";
@@ -223,7 +222,6 @@ void Addition(int** arr1, int row1, int col1, int** arr2, int row2, int col2)
 	}
 }
 
-
 void Singular(int** arr, int row, int col)
 {
 	int determinant = 0, state = 0;
@@ -263,7 +261,6 @@ void Singular(int** arr, int row, int col)
 	else
 		cout << "Singular,";
 }
-
 
 void SkewSymmetric(int** arr, int row, int col)
 {
@@ -349,7 +346,6 @@ void Inverse(int** arr, int row, int col)
 	}
 	else if(row==2)
 	{
-	
 		determinant = (arr[0][0] * arr[1][1]) - (arr[0][1] * arr[1][0]);
 		if (determinant == 0)
 			state = 1;
@@ -358,8 +354,6 @@ void Inverse(int** arr, int row, int col)
 			cout << arr[1][1] << "  " << arr[0][1] * (-1) << endl;
 			cout << arr[1][0] * (-1) << "  " << arr[0][0] << endl;
 		}
-
-
 	}
 	if (state)
 		cout << "Invalid, because determinant = 0 ";
@@ -449,10 +443,12 @@ void transpose(int** arr, int row, int col)
 		for (int j = 0; j < col; j++)
 			transpose[j][i] = arr[i][j];
 	// Printing transpose 
-		for (int i = 0; i < col; i++) {
-			for (int j = 0; j < row; j++)
-				cout << " " << transpose[i][j];
-			cout << "\n";
-		}
-	
+	for (int i = 0; i < col; i++) {
+		for (int j = 0; j < row; j++)
+			cout << " " << transpose[i][j];
+		cout << "\n";
+	}
 }
+
+
+
