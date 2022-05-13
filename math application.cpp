@@ -45,6 +45,7 @@ vector<vector<double>> multiplication(vector<vector<double>> matrix1, vector<vec
 
     // if can multiply
     if(cols1 == rows2){
+
         result.resize(rows1);
         for (int i = 0; i < rows1; i++){
 
@@ -57,15 +58,13 @@ vector<vector<double>> multiplication(vector<vector<double>> matrix1, vector<vec
             }
         }
     }
-        // if cannot multiply
-    else{
-        cout<<"Matrices cannot be multiplied\n";
-    }
+
     return result;
 }
 
 // matrix subtraction
 vector<vector<double>> subtraction(vector<vector<double>> matrix1, vector<vector<double>> matrix2){
+
     vector<vector<double>> result;
 
     int rows1 = matrix1.size();
@@ -85,9 +84,7 @@ vector<vector<double>> subtraction(vector<vector<double>> matrix1, vector<vector
         }
 
     }
-    else{
-        cout<<"Matrices cannot be subtracted\n";
-    }
+
     return result;
 }
 
@@ -109,11 +106,8 @@ vector<vector<double>> addition(vector<vector<double>> matrix1, vector<vector<do
                 result[i][j] = matrix1[i][j] + matrix2[i][j];
             }
         }
+    }
 
-    }
-    else{
-        cout<<"Matrices cannot be added\n";
-    }
     return result;
 }
 
@@ -148,7 +142,7 @@ bool is_symmetric(vector<vector<double>> matrix){
 }
 
 
-bool  is_skew_symmetric(vector<vector<double>> matrix){
+bool is_skew_symmetric(vector<vector<double>> matrix){
 
     int rows = matrix.size();
     int cols = matrix[0].size();
@@ -207,11 +201,14 @@ vector<vector<double>> adjoint(vector<vector<double>> matrix){
 
     int rows = matrix.size();
     int cols = matrix[0].size();
+
     vector<vector<double>> adj_matrix(rows, vector<double>(cols));
 
     // if the matrix is not square
-    if (rows != cols)
+    if (rows != cols) {
+        adj_matrix.clear();
         return adj_matrix;
+    }
 
 
     if (rows == 1)
@@ -223,22 +220,24 @@ vector<vector<double>> adjoint(vector<vector<double>> matrix){
         adj_matrix[1][1] = matrix[0][0];
         return adj_matrix;
     }
-    else{
-        for (int i = 0; i < rows; i++){
-            for (int j = 0; j < cols; j++){
-                vector<vector<double>> sub_matrix;
-                for (int k = 0; k < rows; k++){
-                    if (k != i){
-                        vector<double> sub_matrix_row;
-                        for (int l = 0; l < cols; l++){
-                            if (l != j)
-                                sub_matrix_row.push_back(matrix[k][l]);
-                        }
-                        sub_matrix.push_back(sub_matrix_row);
+
+    for (int i = 0; i < rows; i++){
+        for (int j = 0; j < cols; j++){
+
+            vector<vector<double>> sub_matrix;
+            for (int k = 0; k < rows; k++){
+                if (k != i){
+                    vector<double> sub_matrix_row;
+                    for (int h = 0; h < cols; h++){
+                        if (h != j)
+                            sub_matrix_row.push_back(matrix[k][h]);
                     }
+
+                    sub_matrix.push_back(sub_matrix_row);
                 }
-                adj_matrix[j][i] = pow(-1, i + j) * determinant(sub_matrix);
             }
+
+            adj_matrix[j][i] = pow(-1, i + j) * determinant(sub_matrix);
         }
     }
     return adj_matrix;
@@ -249,7 +248,7 @@ vector<vector<double>> inverse(vector<vector<double>> matrix) {
     int rows = matrix.size();
     int cols = matrix[0].size();
 
-    vector<vector<double>> inverse_matrix(rows, vector<double>(cols, 0));
+    vector<vector<double>> inverse_matrix;
 
     double det = determinant(matrix);
 
@@ -257,12 +256,14 @@ vector<vector<double>> inverse(vector<vector<double>> matrix) {
     if (rows != cols || det == 0)
         return inverse_matrix;
 
+    inverse_matrix.resize(rows);
 
     vector<vector<double>> adj_matrix = adjoint(matrix);
 
     for (int i = 0; i < rows; i++) {
+        inverse_matrix[i].resize(cols);
         for (int j = 0; j < cols; j++) {
-            matrix[i][j] = adj_matrix[i][j] / det;
+            inverse_matrix[i][j] = adj_matrix[i][j] / det;
         }
     }
 
@@ -285,6 +286,9 @@ void add_two_matrices(){
         print_matrix(result);
     }
 
+    else
+        cout<<"Matrices cannot be added\n";
+
 }
 
 void subtract_two_matrices(){
@@ -300,6 +304,9 @@ void subtract_two_matrices(){
         cout << "The difference of the two matrices is: " << endl;
         print_matrix(result);
     }
+
+    else
+        cout<<"Matrices cannot be subtracted\n";
 }
 
 void multiply_two_matrices(){
@@ -315,6 +322,9 @@ void multiply_two_matrices(){
         cout << "The product of the two matrices is: " << endl;
         print_matrix(result);
     }
+
+    else
+        cout<<"Matrices cannot be multiplied\n";
 
 }
 
@@ -357,6 +367,8 @@ void get_matrix_inverse(){
         print_matrix(result);
     }
 
+    else
+        cout << "The matrix is not invertible" << endl;
 }
 
 void get_matrix_adjoint(){
@@ -370,6 +382,8 @@ void get_matrix_adjoint(){
         cout << "The adjoint of the matrix is: " << endl;
         print_matrix(result);
     }
+    else
+        cout<<"The matrix is not square"<<endl;
 }
 
 void check_matrix_is_symmetric(){
@@ -501,5 +515,7 @@ int main(){
     run();
 
 }
+
+
 
 
