@@ -4,26 +4,26 @@
 #include <string>
 #include <vector>
 
-using namespace std;
 
-long double convertBinaryToDecimal(string number);
-string convertDecimalToBinary(long double number);
 
-long double convertOctalToDecimal(string number);
-string convertDecimalToOctal(long double number);
+double convertBinaryToDecimal(std::string number);
+std::string convertDecimalToBinary(double number);
 
-long double convertHexDecimalToDecimal(string number);
-string convertDecimalToHexDecimal(long double number);
+double convertOctalToDecimal(std::string number);
+std::string convertDecimalToOctal(double number);
 
-string convertBinaryToOctal(string number);
-string convertBinaryToHexDecimal(string number);
+double convertHexDecimalToDecimal(std::string number);
+std::string convertDecimalToHexDecimal(double number);
 
-string convertOctalToBinary(string number);
-string convertOctalToHexDecimal(string number);
+std::string convertBinaryToOctal(std::string number);
+std::string convertBinaryToHexDecimal(std::string number);
 
-string convertHexDecimalToBinary(string number);
-string convertHexDecimalToOctal(string number);
+std::string convertOctalToBinary(std::string number);
+std::string convertOctalToHexDecimal(std::string number);
 
-string getFunctionFromTruthTable(int numberOfInputs, vector<int> &output);
+std::string convertHexDecimalToBinary(std::string number);
+std::string convertHexDecimalToOctal(std::string number);
+
+std::string getFunctionFromTruthTable(int numberOfInputs,std::vector<int> &output);
 
 #endif

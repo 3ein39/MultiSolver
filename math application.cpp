@@ -1,422 +1,521 @@
- 
+#include <bits/stdc++.h>
 
-#include <iostream>
-#include <string>
-#include <cmath>
-#include <algorithm>
-#include <cctype> 
-#include <sstream> 
-#include <stdlib.h>
 using namespace std;
- 
-void adjoint(int** arr, int row, int col);
-void transpose(int** arr, int row, int col);
-void determinant(int** arr, int row, int col);
-void Inverse(int** arr, int row, int col);
-void Symmetric(int** arr, int row, int col);
-void SkewSymmetric(int** arr, int row, int col);
-void Singular(int** arr, int row, int col);
-void Addition(int** arr1, int row1, int col1, int** arr2, int row2, int col2);
-void Subtraction(int** arr1, int row1, int col1, int** arr2, int row2, int col2);
-void Multiplication(int** arr1, int row1, int col1, int** arr2, int row2, int col2);
 
 
-int main()
-{     
-	char userkey = 'y';
-	while (userkey == 'y')
-	{ 
-		int NumberOfMatrices;
-		cout << "             *****Welcome to matrices solver******\n";
-		cout << "please enter how many matrices do you want?\n";
-		cout << "1. 1 matrix\n";
-		cout << "2. 2 matrices\n";
-		cout << "Input: ";
-		cin >> NumberOfMatrices;
-		cout << "\n";
-		switch (NumberOfMatrices)
-		{
-		case 1:
-		{ 
-			cout << "1. Transpose\n";
-			cout << "2. Special matrices\n";
-			cout << "3. Deterinment\n";
-			cout << "4. Adjoint \n";
-			cout << "5. Inverse\n";
-			cout << "Input: ";
-			int OppertionIn1 = 0;
-			cin >> OppertionIn1;
-			int row, colum;
-			cout << "Enter rows and colums of matrix: ";
-			cin >> row >> colum;
-			cout << "\nEnter elements of matrix: \n";
-			int** arr = new int* [row];
-			for (int i = 0; i < row; i++)
-				arr[i] = new int[colum];
-			for (int i = 0; i < row; i++)
-				for (int j = 0; j < colum; j++)
-					cin >> arr[i][j];
-			if (row != colum)
-				cout << "Invalid input";
-			else
-			{
-				switch (OppertionIn1)
-				{
-				case 1:
-					cout << "the transpose of the matrix \n";
-					transpose(arr, row, colum);
-					break;
-				case 2:
-					Symmetric(arr, row, colum);
-					SkewSymmetric(arr, row, colum);
-					Singular(arr, row, colum);
-					break;
-				case 3:
-					cout << "Determinant of the matrix\n";
-					determinant(arr, row, colum);
-					break;
-				case 4:
-					cout << "Adjoint of the matrix\n";
-					adjoint(arr, row, colum);
-					break;
-				case 5:
-					cout << "Inverse of the matrix\n";
-					Inverse(arr, row, colum);
-					break;
-				default:
-					cout << "Invalid input\n";
-				}
-			}
-		}
-			break;
-		case 2:
-			cout << "1. Addition\n";
-			cout << "2. Subtraction\n";
-			cout << "3. Multiplication\n"; 
-			cout << "input: ";
-			int OppertionIn2 = 0;
-			cin >> OppertionIn2;
 
-			int  row1, colum1;
-			cout << "Enter rows and colums of matrix1: ";
-			cin >> row1 >> colum1;
-			cout << "\nEnter elements of matrix1: \n";
-			int** arr1 = new int* [row1];
-			for (int i = 0; i < row1; i++)
-				arr1[i] = new int[colum1];
-			for (int i = 0; i < row1; i++)
-				for (int j = 0; j < colum1; j++)
-					cin >> arr1[i][j];
+// for reading matrices
+void read_matrix(vector<vector<double>> &matrix){
+    int rows, cols;
+    cout<<"Enter the number of rows and columns: ";
+    cin >> rows >> cols;
+    matrix.resize(rows); // resize rows
 
-			int  row2, colum2;
-			cout << "Enter rows and colums of matrix2: ";
-			cin >> row2 >> colum2;
-			cout << "\nEnter elements of matrix2: \n";
-			int** arr2 = new int* [row2];
-			for (int i = 0; i < row2; i++)
-				arr2[i] = new int[colum2];
-			for (int i = 0; i < row2; i++)
-				for (int j = 0; j < colum2; j++)
-					cin >> arr2[i][j];
-			switch (OppertionIn2)
-			{
-			case 1:
-				if (row1 != row2 || colum1 != colum2)
-					cout << "invalid input, please try again\n";
-				else {
-					cout << "the sum is \n";
-					Addition(arr1, row1, colum1, arr2, row2, colum2);
-				}
-			break;
-			case 2:
-				if (row1 != row2 || colum1 != colum2)
-					cout << "invalid input, please try again\n";
-				else {
-					cout << "the Subtraction is \n";
-					Subtraction(arr1, row1, colum1, arr2, row2, colum2);
-				}
-				break;
-			case 3:
-				if (row2!=colum1)
-					cout << "invalid input, please try again\n";
-				else {
-					cout << "the Multiplication is \n";
-					Multiplication(arr1, row1, colum1, arr2, row2, colum2);
-				}
-				break;
-			}
 
-		}
-		cout << "\nThanks , do you want to continue 'y'or'n': ";
-		cin >> userkey;
-	}
-
-}
-
-//functions
-
-void Multiplication(int** arr1, int row1, int col1, int** arr2, int row2, int col2)
-{  
-	int mul = 0; 
-	for (int i = 0; i < row1; ++i)
-	{
-		for (int j = 0; j < col2; ++j)
-		{
-			for (int k = 0; k < col1; ++k)
-			{
-				mul += arr1[i][k] * arr2[k][j];
-			}
-			cout << mul  << " ";
-			mul = 0;
-		}
-		cout << "\n";
-	} 
-}
-
-void Subtraction(int** arr1, int row1, int col1, int** arr2, int row2, int col2)
-{
-	for (int i = 0; i < row1; i++)
-	{
-		for (int j = 0; j < col1; j++)
-			cout << arr1[i][j] - arr2[i][j] << " ";
-		cout << "\n";
-	}
+    for (int i = 0; i < rows; i++) {
+        matrix[i].resize(cols); // resize cols
+        for (int j = 0; j < cols; j++) {
+            cout << "Enter element [" << i+1 << "][" << j+1 << "]: ";
+            cin >> matrix[i][j];
+        }
+    }
 }
 
 
-void Addition(int** arr1, int row1, int col1, int** arr2, int row2, int col2)
-{
-	for (int i = 0; i < row1; i++)
-	{
-		for (int j = 0; j < col1; j++)
-			cout << arr1[i][j] + arr2[i][j] << " ";
-		cout << "\n";
-	}
-}
+// printing matrices
+void print_matrix(vector<vector<double>> &matrix){
 
-void Singular(int** arr, int row, int col)
-{
-	int determinant = 0, state = 0;
-	if (row == 3)
-	{
-		int** arr1 = new int* [3];
-		for (int i = 0; i < 3; i++)
-			arr1[i] = new int[3];
-		int   x = 0, z = 0, y = 2, a = 2, b = -1;
-		for (int r = 0; r < 3; r++)
-		{
-			for (int c = 0; c < 3; c++)
-			{
-				if (x == r)
-					x++;
-				if (c == 0)
-					z = 1;
-				if (c == 2)
-					a = 1;
-				if (y == x || y == r)
-					y--;
-				b *= (-1);
-				arr1[r][c] = b * ((arr[x][z] * arr[y][a]) - (arr[x][a] * arr[y][z]));
-				z = 0;
-				a = 2;
-				x = 0;
-				y = 2;
-			}
-		}
-		for (int i = 0; i < 3; i++)
-			determinant += arr[0][i] * arr1[0][i];
-	}
-	else
-		determinant = (arr[0][0] * arr[1][1]) - (arr[0][1] * arr[1][0]);
-	if (determinant)
-		cout << " Non-Singular,";
-	else
-		cout << "Singular,";
-}
-
-void SkewSymmetric(int** arr, int row, int col)
-{
-	int transpose[5][5], state = 0;
-	// Computing transpose of the matrix
-	for (int i = 0; i < row; i++)
-		for (int j = 0; j < col; j++)
-			transpose[j][i] = arr[i][j];
-	for (int i = 0; i < row; i++)
-		for (int j = 0; j < col; j++)
-			if (arr[i][j] != -1 * transpose[i][j])
-				state = 1;
-	if (state == 0)
-		cout << "Skew Symmetric Matrix,";
-}
-
-void Symmetric(int** arr, int row, int col)
-{
-	int transpose[5][5], state = 1;
-	// Computing transpose of the matrix
-	for (int i = 0; i < row; i++)
-		for (int j = 0; j < col; j++)
-			transpose[j][i] = arr[i][j];
-	for (int i = 0; i < row; i++)
-		for (int j = 0; j < col; j++)
-			if (arr[i][j] != transpose[i][j])
-				state = 0;
-	if (state)
-		cout << "Symmetric Matrix,";
+    for (int i = 0; i < (int)matrix.size(); i++) {
+        for (int j = 0; j < (int)matrix[i].size(); j++) {
+            cout << matrix[i][j] << " ";
+        }
+        cout << endl;
+    }
 }
 
 
-void Inverse(int** arr, int row, int col)
-{
-	int state = 0, d = 0, determinant = 0;
-	if (row == 3)
-	{
-		int transpose[3][3], inverse[3][3], state = 0;
-		int** arr1 = new int* [3];
-		for (int i = 0; i < 3; i++)
-			arr1[i] = new int[3];
-		int   x = 0, z = 0, y = 2, a = 2, b = -1;
-		for (int r = 0; r < 3; r++)
-		{
-			for (int c = 0; c < 3; c++)
-			{
-				if (x == r)
-					x++;
-				if (c == 0)
-					z = 1;
-				if (c == 2)
-					a = 1;
-				if (y == x || y == r)
-					y--;
-				b *= (-1);
-				arr1[r][c] = b * ((arr[x][z] * arr[y][a]) - (arr[x][a] * arr[y][z]));
-				z = 0;
-				a = 2;
-				x = 0;
-				y = 2;
-			}
-		}
-		for (int i = 0; i < 3; i++)
-			determinant += arr[0][i] * arr1[0][i];
-		for (int i = 0; i < 3; i++)
-			for (int j = 0; j < 3; j++)
-				transpose[j][i] = arr1[i][j];
+// matrix multiplication
+vector<vector<double>> multiplication(vector<vector<double>> matrix1, vector<vector<double>> matrix2){
 
-		// Inverse
-		cout << " Inverse of the matrix \n " << endl;
-		for (int row = 0; row < 3; row++) {
-			for (int col = 0; col < 3; col++) {
-				if (determinant != 0) {
-					inverse[row][col] = (1 / determinant) * transpose[row][col];
-					cout << inverse[row][col] << " ";
-				}
-				else
-					state = 1;
-			}
-			cout << "\n";
-		}
-		d = (1 / determinant);
-	}
-	else
-	{
-		determinant = (arr[0][0] * arr[1][1]) - (arr[0][1] * arr[1][0]);
-		if (determinant == 0)
-			state = 1;
-	}
-	if (state)
-		cout << "Invalid, because determinant = 0 ";
+    vector<vector<double>> result;
+    int rows1 = matrix1.size();
+    int cols1 = matrix1[0].size();
+    int rows2 = matrix2.size();
+    int cols2 = matrix2[0].size();
+
+    // if can multiply
+    if(cols1 == rows2){
+
+        result.resize(rows1);
+        for (int i = 0; i < rows1; i++){
+
+            result[i].resize(cols2);
+            for(int j = 0; j < cols2; j++){
+                result[i][j]=0;
+                for(int k = 0;k < cols1; k++){
+                    result[i][j] += matrix1[i][k] * matrix2[k][j];
+                }
+            }
+        }
+    }
+
+    return result;
+}
+
+// matrix subtraction
+vector<vector<double>> subtraction(vector<vector<double>> matrix1, vector<vector<double>> matrix2){
+
+    vector<vector<double>> result;
+
+    int rows1 = matrix1.size();
+    int cols1 = matrix1[0].size();
+    int rows2 = matrix2.size();
+    int cols2 = matrix2[0].size();
+
+
+
+    if (rows1==rows2 && cols1==cols2){
+        result.resize(rows1);
+        for(int i = 0; i < rows1; i++){
+            result[i].resize(cols1);
+            for(int j = 0; j < cols1; j++){
+                result[i][j] = matrix1[i][j] - matrix2[i][j];
+            }
+        }
+
+    }
+
+    return result;
 }
 
 
-void determinant(int** arr, int row, int col)
-{
-	int determinant = 0;
-	if (row == 3)
-	{
-		int** arr1 = new int* [3];
-		for (int i = 0; i < 3; i++)
-			arr1[i] = new int[3];
-		int   x = 0, z = 0, y = 2, a = 2, b = -1;
-		for (int r = 0; r < 3; r++)
-		{
-			for (int c = 0; c < 3; c++)
-			{
-				if (x == r)
-					x++;
-				if (c == 0)
-					z = 1;
-				if (c == 2)
-					a = 1;
-				if (y == x || y == r)
-					y--;
-				b *= (-1);
-				arr1[r][c] = b * ((arr[x][z] * arr[y][a]) - (arr[x][a] * arr[y][z]));
-				z = 0;
-				a = 2;
-				x = 0;
-				y = 2;
-			}
-		}
-		for (int i = 0; i < 3; i++)
-			determinant += arr[0][i] * arr1[0][i];
-	}
-	else
-		determinant = (arr[0][0] * arr[1][1]) - (arr[0][1] * arr[1][0]);
+// matrix addition
+vector<vector<double>> addition(vector<vector<double>> matrix1, vector<vector<double>> matrix2){
 
-	cout << "Determinant = " << determinant << "\n";
+    vector<vector<double>> result;
+    int rows1 = matrix1.size();
+    int cols1 = matrix1[0].size();
+    int rows2 = matrix2.size();
+    int cols2 = matrix2[0].size();
+
+    if (rows1==rows2 && cols1==cols2){
+        result.resize(rows1);
+        for(int i = 0; i < rows1; i++){
+            result[i].resize(cols1);
+            for(int j = 0; j < cols1; j++){
+                result[i][j] = matrix1[i][j] + matrix2[i][j];
+            }
+        }
+    }
+
+    return result;
+}
+
+
+// matrix transpose
+vector<vector<double>> transpose(vector<vector<double>> matrix){
+
+    vector<vector<double>> transpose(matrix[0].size(), vector<double>(matrix.size()));
+
+    for (int i = 0; i < matrix.size(); i++)
+        for (int j = 0; j < matrix[i].size(); j++)
+            transpose[j][i] = matrix[i][j];
+    return transpose;
+}
+
+
+bool is_symmetric(vector<vector<double>> matrix){
+    int rows = matrix.size();
+    int cols = matrix[0].size();
+
+    if (rows != cols)
+        return false;
+
+    for(int i = 0; i < rows; i++){
+        for(int j = 0; j < cols; j++){
+            if (matrix[i][j] != matrix[j][i]){
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
+
+bool is_skew_symmetric(vector<vector<double>> matrix){
+
+    int rows = matrix.size();
+    int cols = matrix[0].size();
+
+    if (rows != cols)
+        return false;
+
+    for(int i = 0;i < rows; i++){
+        for(int j = 0; j < cols; j++){
+            if (matrix[i][j] != -1 * matrix[j][i]){
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
+// determinant of a matrix
+double determinant(vector<vector<double>> matrix){
+
+    int rows = matrix.size();
+    int cols = matrix[0].size();
+
+    // if the matrix is not square
+    if (rows != cols)
+        return -1;
+
+    double det = 0;
+    if (rows == 1)
+        return matrix[0][0];
+    if (rows == 2)
+        return (matrix[0][0] * matrix[1][1]) - (matrix[0][1] * matrix[1][0]);
+    else{
+        for (int i = 0; i < rows; i++){
+
+            vector<vector<double>> sub_matrix;
+            for (int j = 1; j < rows; j++){
+                vector<double> sub_matrix_row;
+                for (int k = 0; k < cols; k++){
+                    if (k != i)
+                        sub_matrix_row.push_back(matrix[j][k]);
+                }
+                sub_matrix.push_back(sub_matrix_row);
+            }
+            det += matrix[0][i] * pow(-1, i) * determinant(sub_matrix);
+        }
+    }
+    return det;
+}
+
+bool is_singular(vector<vector<double>> matrix){
+    return (determinant(matrix) == 0);
+}
+
+vector<vector<double>> adjoint(vector<vector<double>> matrix){
+
+    int rows = matrix.size();
+    int cols = matrix[0].size();
+
+    vector<vector<double>> adj_matrix(rows, vector<double>(cols));
+
+    // if the matrix is not square
+    if (rows != cols) {
+        adj_matrix.clear();
+        return adj_matrix;
+    }
+
+
+    if (rows == 1)
+        return matrix;
+    if (rows == 2) {
+        adj_matrix[0][0] = matrix[1][1];
+        adj_matrix[0][1] = -1 * matrix[0][1];
+        adj_matrix[1][0] = -1 * matrix[1][0];
+        adj_matrix[1][1] = matrix[0][0];
+        return adj_matrix;
+    }
+
+    for (int i = 0; i < rows; i++){
+        for (int j = 0; j < cols; j++){
+
+            vector<vector<double>> sub_matrix;
+            for (int k = 0; k < rows; k++){
+                if (k != i){
+                    vector<double> sub_matrix_row;
+                    for (int h = 0; h < cols; h++){
+                        if (h != j)
+                            sub_matrix_row.push_back(matrix[k][h]);
+                    }
+
+                    sub_matrix.push_back(sub_matrix_row);
+                }
+            }
+
+            adj_matrix[j][i] = pow(-1, i + j) * determinant(sub_matrix);
+        }
+    }
+    return adj_matrix;
+}
+
+vector<vector<double>> inverse(vector<vector<double>> matrix) {
+
+    int rows = matrix.size();
+    int cols = matrix[0].size();
+
+    vector<vector<double>> inverse_matrix;
+
+    double det = determinant(matrix);
+
+    // if the matrix is not square or the matrix is singular
+    if (rows != cols || det == 0)
+        return inverse_matrix;
+
+    inverse_matrix.resize(rows);
+
+    vector<vector<double>> adj_matrix = adjoint(matrix);
+
+    for (int i = 0; i < rows; i++) {
+        inverse_matrix[i].resize(cols);
+        for (int j = 0; j < cols; j++) {
+            inverse_matrix[i][j] = adj_matrix[i][j] / det;
+        }
+    }
+
+    return inverse_matrix;
 }
 
 
 
-void adjoint(int** arr, int row, int col)
-{
-	if (row == 3)
-	{
-		int** arr1 = new int* [3];
-		for (int i = 0; i < 3; i++)
-			arr1[i] = new int[3];
-		int   x = 0, z = 0, y = 2, a = 2, b = -1, determinant = 0;
-		for (int r = 0; r < 3; r++)
-		{
-			for (int c = 0; c < 3; c++)
-			{
-				if (x == r)
-					x++;
-				if (c == 0)
-					z = 1;
-				if (c == 2)
-					a = 1;
-				if (y == x || y == r)
-					y--;
-				b *= (-1);
-				arr1[r][c] = b * ((arr[x][z] * arr[y][a]) - (arr[x][a] * arr[y][z]));
-				z = 0;
-				a = 2;
-				x = 0;
-				y = 2;
-			}
-		}
-		transpose(arr1, 3, 3);
-	}
-	else
-		cout << arr[1][1] << " " << -1 * arr[0][1] << "\n" << -1 * arr[1][0] << " " << arr[0][0];
+void add_two_matrices(){
+    vector<vector<double>> matrix_1,matrix_2;
+    cout<<"Enter the first matrix"<<endl;
+    read_matrix(matrix_1);
+    cout<<"Enter the second matrix"<<endl;
+    read_matrix(matrix_2);
+
+    vector<vector<double>> result = addition(matrix_1, matrix_2);
+
+    if (!result.empty()) {
+        cout << "The sum of the two matrices is: " << endl;
+        print_matrix(result);
+    }
+
+    else
+        cout<<"Matrices cannot be added\n";
 
 }
 
-void transpose(int** arr, int row, int col)
-{
-	int transpose[5][5];
-	// Computing transpose 
-	for (int i = 0; i < row; i++)
-		for (int j = 0; j < col; j++)
-			transpose[j][i] = arr[i][j];
-	// Printing transpose 
-	for (int i = 0; i < col; i++) {
-		for (int j = 0; j < row; j++)
-			cout << " " << transpose[i][j];
-		cout << "\n";
-	}
+void subtract_two_matrices(){
+    vector<vector<double>> matrix_1,matrix_2;
+    cout<<"Enter the first matrix"<<endl;
+    read_matrix(matrix_1);
+    cout<<"Enter the second matrix"<<endl;
+    read_matrix(matrix_2);
+
+    vector<vector<double>> result = subtraction(matrix_1, matrix_2);
+
+    if (!result.empty()) {
+        cout << "The difference of the two matrices is: " << endl;
+        print_matrix(result);
+    }
+
+    else
+        cout<<"Matrices cannot be subtracted\n";
+}
+
+void multiply_two_matrices(){
+    vector<vector<double>> matrix_1,matrix_2;
+    cout<<"Enter the first matrix"<<endl;
+    read_matrix(matrix_1);
+    cout<<"Enter the second matrix"<<endl;
+    read_matrix(matrix_2);
+
+    vector<vector<double>> result = multiplication(matrix_1, matrix_2);
+
+    if (!result.empty()) {
+        cout << "The product of the two matrices is: " << endl;
+        print_matrix(result);
+    }
+
+    else
+        cout<<"Matrices cannot be multiplied\n";
+
 }
 
 
 
- 
+void get_matrix_transpose(){
+    vector<vector<double>> matrix;
+    cout<<"Enter the matrix"<<endl;
+    read_matrix(matrix);
+
+    vector<vector<double>> result = transpose(matrix);
+
+    if (!result.empty()) {
+        cout << "The transpose of the matrix is: " << endl;
+        print_matrix(result);
+    }
+}
+
+void get_matrix_determinant(){
+    vector<vector<double>> matrix;
+    cout<<"Enter the matrix"<<endl;
+    read_matrix(matrix);
+
+    double result = determinant(matrix);
+
+    if (result != -1)
+        cout << "The determinant of the matrix is: " << result << endl;
+    else cout << "The matrix is not square" << endl;
+}
+
+void get_matrix_inverse(){
+    vector<vector<double>> matrix;
+    cout<<"Enter the matrix"<<endl;
+    read_matrix(matrix);
+
+    vector<vector<double>> result = inverse(matrix);
+
+    if (!result.empty()) {
+        cout << "The inverse of the matrix is: " << endl;
+        print_matrix(result);
+    }
+
+    else
+        cout << "The matrix is not invertible" << endl;
+}
+
+void get_matrix_adjoint(){
+    vector<vector<double>> matrix;
+    cout<<"Enter the matrix"<<endl;
+    read_matrix(matrix);
+
+    vector<vector<double>> result = adjoint(matrix);
+
+    if (!result.empty()) {
+        cout << "The adjoint of the matrix is: " << endl;
+        print_matrix(result);
+    }
+    else
+        cout<<"The matrix is not square"<<endl;
+}
+
+void check_matrix_is_symmetric(){
+    vector<vector<double>> matrix;
+    cout<<"Enter the matrix"<<endl;
+    read_matrix(matrix);
+
+    bool result = is_symmetric(matrix);
+
+    if (result)
+        cout << "The matrix is symmetric" << endl;
+    else cout << "The matrix is not symmetric" << endl;
+
+
+}
+
+void check_matrix_is_skew_symmetric(){
+    vector<vector<double>> matrix;
+    cout<<"Enter the matrix"<<endl;
+    read_matrix(matrix);
+
+    bool result = is_skew_symmetric(matrix);
+
+    if (result)
+        cout << "The matrix is skew symmetric" << endl;
+    else cout << "The matrix is not skew symmetric" << endl;
+
+
+}
+
+void check_matrix_is_singular(){
+
+
+    vector<vector<double>> matrix;
+    cout<<"Enter the matrix"<<endl;
+    read_matrix(matrix);
+
+    bool result = is_singular(matrix);
+
+    if (result)
+        cout << "The matrix is singular" << endl;
+    else cout << "The matrix is not singular" << endl;
+
+
+}
+
+
+int menu(){
+    int choice=-1;
+
+    // keep asking until the user enters a valid choice
+    while (choice == -1){
+
+        cout << "             *****Welcome to matrices solver******"<<endl;
+        cout<<"1) add two matrices"<<endl;
+        cout<<"2) subtract two matrices"<<endl;
+        cout<<"3) multiply two matrices"<<endl;
+        cout<<"4) get the transpose of a matrix"<<endl;
+        cout<<"5) get the determinant of a matrix"<<endl;
+        cout<<"6) get the inverse of a matrix"<<endl;
+        cout<<"7) get the adjoint of a matrix"<<endl;
+        cout<<"8) check if a matrix is symmetric"<<endl;
+        cout<<"9) check if a matrix is skew symmetric"<<endl;
+        cout<<"10) check if a matrix is singular"<<endl;
+        cout<<"11) exit"<<endl;
+        cout<<"Enter your choice: ";
+        cin>>choice;
+
+        if (!(choice >= 1 && choice <= 11) ){
+            cout<<"Invalid choice, try again\n";
+            choice =-1;
+        }
+    }
+    return choice;
+}
+
+
+void run(){
+
+    bool exit = false;
+
+    while (!exit){
+
+        int choice = menu();
+
+        switch (choice){
+            case 1:
+                add_two_matrices();
+                break;
+            case 2:
+                subtract_two_matrices();
+                break;
+            case 3:
+                multiply_two_matrices();
+                break;
+            case 4:
+                get_matrix_transpose();
+                break;
+            case 5:
+                get_matrix_determinant();
+                break;
+            case 6:
+                get_matrix_inverse();
+                break;
+            case 7:
+                get_matrix_adjoint();
+                break;
+            case 8:
+                check_matrix_is_symmetric();
+                break;
+            case 9:
+                check_matrix_is_skew_symmetric();
+                break;
+            case 10:
+                check_matrix_is_singular();
+                break;
+            case 11:
+                exit = true;
+                break;
+        }
+    }
+
+}
+
+
+
+int main(){
+
+    run();
+
+}
+
+
+
+
