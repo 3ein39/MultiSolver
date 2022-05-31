@@ -1,0 +1,364 @@
+﻿  MyForm.cpp
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1003,17): warning C4477: 'sprintf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'System::String ^'
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1003,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1013,17): warning C4477: 'sprintf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'System::String ^'
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1013,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1031,17): warning C4477: 'sprintf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'System::String ^'
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1031,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1043,17): warning C4477: 'sprintf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'System::String ^'
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1043,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1071,17): warning C4477: 'sprintf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'System::String ^'
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1071,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1090,17): warning C4477: 'sprintf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'System::String ^'
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1090,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1102,17): warning C4477: 'sprintf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'System::String ^'
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1102,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1123,17): warning C4477: 'sprintf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'System::String ^'
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1123,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1137,17): warning C4477: 'sprintf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'System::String ^'
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1137,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1152,17): warning C4477: 'sprintf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'System::String ^'
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1152,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1171,17): warning C4477: 'sprintf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'System::String ^'
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1171,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4165,19): warning C4566: character represented by universal-character-name '\u03BC' cannot be represented in the current code page (1252)
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4381,19): warning C4566: character represented by universal-character-name '\u03C1' cannot be represented in the current code page (1252)
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(3786,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(3792,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(3803,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(3809,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(3814,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(3832,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(3840,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(3845,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(3863,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(3869,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(3882,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(3888,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(3901,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(3907,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(3919,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(3925,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(3936,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(3942,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(3948,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(3959,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(3965,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(3991,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(3998,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4010,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4017,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4029,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4037,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4042,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4060,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4067,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4078,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4086,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4093,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4099,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4112,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4120,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4127,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4133,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4145,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4152,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4158,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4164,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4178,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4184,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4195,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4201,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4207,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4219,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4226,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4232,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4238,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4250,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4256,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4268,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4274,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4279,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4291,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4297,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4302,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4307,33): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4312,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4324,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4331,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4341,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4349,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4356,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4362,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4368,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4374,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4380,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4393,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4400,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4406,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4412,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4418,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4429,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4436,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4442,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4448,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4459,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4465,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4476,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4482,33): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4493,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4502,33): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4507,33): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4512,33): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4527,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4533,33): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4538,33): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4543,33): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4554,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4560,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4565,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4570,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4584,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4590,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4595,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4611,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4618,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4629,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4636,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4649,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4655,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4667,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4673,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4678,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4690,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4697,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4709,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4716,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4728,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4735,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4746,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4753,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4765,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4772,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4778,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4784,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4796,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4803,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4809,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4815,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4826,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4832,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4845,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4852,33): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4858,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4864,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4870,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4881,31): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4890,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4897,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\gpaForm.h(591,1): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\shahd\source\repos\Project3\Project3\gpaForm.h(593,1): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\shahd\source\repos\Project3\Project3\gpaForm.h(597,1): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\shahd\source\repos\Project3\Project3\gpaForm.h(599,1): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\shahd\source\repos\Project3\Project3\gpaForm.h(601,1): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\shahd\source\repos\Project3\Project3\MyForm.cpp(5,33): warning C4829: Possibly incorrect parameters to function main. Consider 'int main(Platform::Array<Platform::String^>^ argv)'
+  MyForm1.cpp
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1003,17): warning C4477: 'sprintf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'System::String ^'
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1003,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1013,17): warning C4477: 'sprintf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'System::String ^'
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1013,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1031,17): warning C4477: 'sprintf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'System::String ^'
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1031,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1043,17): warning C4477: 'sprintf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'System::String ^'
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1043,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1071,17): warning C4477: 'sprintf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'System::String ^'
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1071,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1090,17): warning C4477: 'sprintf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'System::String ^'
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1090,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1102,17): warning C4477: 'sprintf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'System::String ^'
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1102,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1123,17): warning C4477: 'sprintf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'System::String ^'
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1123,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1137,17): warning C4477: 'sprintf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'System::String ^'
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1137,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1152,17): warning C4477: 'sprintf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'System::String ^'
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1152,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1171,17): warning C4477: 'sprintf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'System::String ^'
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1171,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.cpp(152,28): warning C4244: 'initializing': conversion from 'double' to '__int64', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.cpp(185,31): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.cpp(201,28): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.cpp(205,66): warning C4244: '+=': conversion from 'double' to '__int64', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.cpp(212,28): warning C4244: 'initializing': conversion from 'double' to '__int64', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.cpp(243,31): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.cpp(250,28): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.cpp(254,66): warning C4244: '+=': conversion from 'double' to '__int64', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.cpp(261,31): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.cpp(269,28): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.cpp(274,66): warning C4244: '+=': conversion from 'double' to '__int64', possible loss of data
+  MyForm11.cpp
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1003,17): warning C4477: 'sprintf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'System::String ^'
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1003,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1013,17): warning C4477: 'sprintf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'System::String ^'
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1013,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1031,17): warning C4477: 'sprintf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'System::String ^'
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1031,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1043,17): warning C4477: 'sprintf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'System::String ^'
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1043,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1071,17): warning C4477: 'sprintf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'System::String ^'
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1071,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1090,17): warning C4477: 'sprintf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'System::String ^'
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1090,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1102,17): warning C4477: 'sprintf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'System::String ^'
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1102,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1123,17): warning C4477: 'sprintf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'System::String ^'
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1123,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1137,17): warning C4477: 'sprintf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'System::String ^'
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1137,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1152,17): warning C4477: 'sprintf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'System::String ^'
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1152,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1171,17): warning C4477: 'sprintf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'System::String ^'
+C:\Users\shahd\source\repos\Project3\Project3\MyForm1.h(1171,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4165,19): warning C4566: character represented by universal-character-name '\u03BC' cannot be represented in the current code page (1252)
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4381,19): warning C4566: character represented by universal-character-name '\u03C1' cannot be represented in the current code page (1252)
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(3786,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(3792,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(3803,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(3809,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(3814,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(3832,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(3840,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(3845,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(3863,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(3869,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(3882,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(3888,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(3901,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(3907,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(3919,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(3925,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(3936,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(3942,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(3948,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(3959,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(3965,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(3991,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(3998,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4010,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4017,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4029,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4037,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4042,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4060,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4067,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4078,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4086,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4093,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4099,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4112,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4120,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4127,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4133,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4145,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4152,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4158,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4164,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4178,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4184,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4195,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4201,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4207,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4219,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4226,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4232,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4238,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4250,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4256,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4268,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4274,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4279,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4291,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4297,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4302,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4307,33): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4312,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4324,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4331,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4341,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4349,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4356,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4362,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4368,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4374,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4380,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4393,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4400,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4406,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4412,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4418,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4429,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4436,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4442,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4448,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4459,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4465,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4476,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4482,33): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4493,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4502,33): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4507,33): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4512,33): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4527,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4533,33): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4538,33): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4543,33): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4554,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4560,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4565,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4570,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4584,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4590,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4595,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4611,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4618,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4629,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4636,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4649,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4655,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4667,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4673,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4678,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4690,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4697,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4709,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4716,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4728,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4735,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4746,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4753,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4765,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4772,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4778,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4784,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4796,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4803,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4809,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4815,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4826,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4832,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4845,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4852,33): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4858,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4864,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4870,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4881,31): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4890,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\MyFormphysics.h(4897,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shahd\source\repos\Project3\Project3\gpaForm.h(591,1): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\shahd\source\repos\Project3\Project3\gpaForm.h(593,1): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\shahd\source\repos\Project3\Project3\gpaForm.h(597,1): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\shahd\source\repos\Project3\Project3\gpaForm.h(599,1): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\shahd\source\repos\Project3\Project3\gpaForm.h(601,1): warning C4305: '=': truncation from 'double' to 'float'
+  Generating Code...
+  funform.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+  Project3.vcxproj -> C:\Users\shahd\source\repos\Project3\x64\Debug\Project3.exe

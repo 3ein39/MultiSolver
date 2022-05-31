@@ -1,0 +1,10 @@
+C:\Users\shahd\source\repos\Project3\Project3\x64\Debug\Project3.vcxproj.AssemblyReference.cache
+C:\Users\shahd\source\repos\Project3\Project3\x64\Debug\Project3.materialsForm.resources
+C:\Users\shahd\source\repos\Project3\Project3\x64\Debug\Project3.gpaForm.resources
+C:\Users\shahd\source\repos\Project3\Project3\x64\Debug\Project3.MyForm.resources
+C:\Users\shahd\source\repos\Project3\Project3\x64\Debug\Project3.MyForm1.resources
+C:\Users\shahd\source\repos\Project3\Project3\x64\Debug\Project3.MyForm11.resources
+C:\Users\shahd\source\repos\Project3\Project3\x64\Debug\Project3.MyForm2.resources
+C:\Users\shahd\source\repos\Project3\Project3\x64\Debug\Project3.MyFormphysics.resources
+C:\Users\shahd\source\repos\Project3\Project3\x64\Debug\Project3.vcxproj.GenerateResource.cache
+C:\Users\shahd\source\repos\Project3\Project3\x64\Debug\Project3.funform.resources

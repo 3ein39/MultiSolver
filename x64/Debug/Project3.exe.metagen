@@ -1,0 +1,125 @@
+  Project3.funform.resources - Embedded, ContainedInManifestFile, 
+  Project3.materialsForm.resources - Embedded, ContainedInManifestFile, 
+  Project3.gpaForm.resources - Embedded, ContainedInManifestFile, 
+  Project3.MyForm.resources - Embedded, ContainedInManifestFile, 
+  Project3.MyForm1.resources - Embedded, ContainedInManifestFile, 
+  Project3.MyForm11.resources - Embedded, ContainedInManifestFile, 
+  Project3.MyForm2.resources - Embedded, ContainedInManifestFile, 
+  Project3.MyFormphysics.resources - Embedded, ContainedInManifestFile, 
+ImageRuntimeVersion: v4.0.30319
+Assembly Project3, Version=0.0.*, Culture=Invariant Language (Invariant Country): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class Project3.funform: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Project3.materialsForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Project3.gpaForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Project3.MyForm1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Project3.MyForm2: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Project3.MyFormphysics: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Single cnt1 : Public
+    Single k : Public
+    Single x : Public
+    Single cnt2 : Public
+    Single m : Public
+    Single cnt3 : Public
+    Single w : Public
+    Single Q : Public
+    Single A : Public
+    Int32 cnt4 : Public
+    Single cnt5 : Public
+    Single v : Public
+    Int32 cnt6 : Public
+    Int32 cnt7 : Public
+    Int32 cnt8 : Public
+    Single g : Public
+    Single cnt9 : Public
+    Single l : Public
+    Single y : Public
+    Single cnt10 : Public
+    Single t : Public
+    Single f : Public
+    Single cnt11 : Public
+    Int32 cnt12 : Public
+    Int32 cnt13 : Public
+    Single cnt14 : Public
+    Int32 cnt15 : Public
+    Int32 cnt16 : Public
+    Single cnt18 : Public
+    Single B : Public
+    Single s : Public
+    Single cnt19 : Public
+    Single p : Public
+    Single cnt20 : Public
+    Single b : Public
+    Int32 cnt21 : Public
+    Single cnt22 : Public
+    Single w0 : Public
+    Int32 cnt23 : Public
+    Single tc : Public
+    Int32 cnt25 : Public
+    Int32 cnt26 : Public
+    Int32 cnt27 : Public
+    Int32 cnt28 : Public
+    Single cnt29 : Public
+    Single I : Public
+    Single I0 : Public
+    Single cnt30 : Public
+    Single vs : Public
+    Single vl : Public
+    Single v0 : Public
+    Int32 cnt31 : Public
+    Int32 cnt32 : Public
+    Int32 cnt33 : Public
+    Single cnt34 : Public
+    Single n : Public
+    Int32 cnt35 : Public
+    Int32 cnt36 : Public
+    Int32 cnt37 : Public
+    Single cnt38 : Public
+    Single d : Public
+    Int32 cnt39 : Public
+    Int32 cnt40 : Public
+    Int32 cnt41 : Public
+    Int32 cnt42 : Public
+    Int32 cnt43 : Public
+    Int32 cnt44 : Public
+    Single cnt45 : Public
+    Single y2 : Public
+    Int32 cnt47 : Public
+Class Project3.MyForm11: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Project3.MyForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
