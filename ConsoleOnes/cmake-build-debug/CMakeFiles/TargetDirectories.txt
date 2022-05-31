@@ -1,3 +1,0 @@
-/home/hussein/Project/MultiSolver/ConsoleOnes/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/hussein/Project/MultiSolver/ConsoleOnes/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/hussein/Project/MultiSolver/ConsoleOnes/cmake-build-debug/CMakeFiles/ConsoleOnes.dir
