@@ -1,5 +1,5 @@
 #pragma once
-
+bool isEmpty(System::Windows::Forms::TextBox^ x);
 namespace Project3 {
 
 	using namespace System;
@@ -566,57 +566,81 @@ namespace Project3 {
 		otherform->Show();
 	}
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-		int arr[15] = {0};
-		float gpa, totalGpa_hrs;
-		 arr[0] = System::Convert::ToInt16(textBox1->Text);
-		 arr[1] = System::Convert::ToInt16(textBox2->Text);
-		 arr[2] = System::Convert::ToInt16(textBox3->Text);
-		 arr[3] = System::Convert::ToInt16(textBox4->Text);
-		 arr[4] = System::Convert::ToInt16(textBox5->Text);
-		 arr[5] = System::Convert::ToInt16(textBox6->Text);
-		 arr[6] = System::Convert::ToInt16(textBox7->Text);
-		 arr[7] = System::Convert::ToInt16(textBox8->Text);
-		 arr[8] = System::Convert::ToInt16(textBox9->Text);
-		 arr[9] = System::Convert::ToInt16(textBox10->Text);
-		 arr[10] = System::Convert::ToInt16(textBox11->Text);
-		 arr[11] = System::Convert::ToInt16(textBox12->Text);
-		 arr[12] = System::Convert::ToInt16(textBox13->Text);
-		 arr[13] = System::Convert::ToInt16(textBox14->Text);
-		 arr[14] = System::Convert::ToInt16(textBox15->Text); 
-		 for (int i = 0; i <15; i++) 
-		 { 
-			 if (arr[i] >= 90) 
-				 gpa = 4; 
-			 else if (arr[i] >= 85 && arr[i] < 95) 
-				 gpa = 3.6; 
-			 else if (arr[i] >= 80 && arr[i] < 85) 
-				 gpa = 3.3; 
-			 else if (arr[i] >= 75 && arr[i] < 80) 
-				 gpa = 3; 
-			 else if (arr[i] >= 70 && arr[i] < 75) 
-				 gpa = 2.6; 
-			 else if (arr[i] >= 65 && arr[i] < 70) 
-				 gpa = 2.4; 
-			 else if (arr[i] >= 60 && arr[i] < 65)
-				 gpa = 2.2; 
-			 else if (arr[i] >= 50 && arr[i] < 60) 
-				 gpa = 2; 
-			 else if (arr[i] < 50) 
-				 gpa = 0;  
+		int arr[15] = { 0 };
+		float gpa=0.0, totalGpa_hrs=0.0; 
+		if (isEmpty(textBox1) || isEmpty(textBox2) || isEmpty(textBox3) || isEmpty(textBox4) ||
+			isEmpty(textBox5) || isEmpty(textBox6) || isEmpty(textBox7) || isEmpty(textBox8) ||
+			isEmpty(textBox9) || isEmpty(textBox10) || isEmpty(textBox11) || isEmpty(textBox12)
+			|| isEmpty(textBox13) || isEmpty(textBox14) || isEmpty(textBox15))
+		{
+			label7->Text = "Fill all textboxes";
+			label18->Text = "";
+		}
+		else
+		{
+			arr[0] = System::Convert::ToInt16(textBox1->Text);
+			arr[1] = System::Convert::ToInt16(textBox2->Text);
+			arr[2] = System::Convert::ToInt16(textBox3->Text);
+			arr[3] = System::Convert::ToInt16(textBox4->Text);
+			arr[4] = System::Convert::ToInt16(textBox5->Text);
+			arr[5] = System::Convert::ToInt16(textBox6->Text);
+			arr[6] = System::Convert::ToInt16(textBox7->Text);
+			arr[7] = System::Convert::ToInt16(textBox8->Text);
+			arr[8] = System::Convert::ToInt16(textBox9->Text);
+			arr[9] = System::Convert::ToInt16(textBox10->Text);
+			arr[10] = System::Convert::ToInt16(textBox11->Text);
+			arr[11] = System::Convert::ToInt16(textBox12->Text);
+			arr[12] = System::Convert::ToInt16(textBox13->Text);
+			arr[13] = System::Convert::ToInt16(textBox14->Text);
+			arr[14] = System::Convert::ToInt16(textBox15->Text);
+			int state = 0;
+			for (int i = 0; i < 15; i++) 
+				if (arr[i] > 100 || arr[i] < 0)
+				{
+					label7->Text = "enter inputs only from 0 to 100";
+					label18 -> Text = "";
+					state = 1;
+					break;
+				} 
+			if (state == 0)
+			{
+				for (int i = 0; i < 15; i++)
+				{
+					if (arr[i] >= 90)
+						gpa = 4;
+					else if (arr[i] >= 85 && arr[i] < 95)
+						gpa = 3.6;
+					else if (arr[i] >= 80 && arr[i] < 85)
+						gpa = 3.3;
+					else if (arr[i] >= 75 && arr[i] < 80)
+						gpa = 3;
+					else if (arr[i] >= 70 && arr[i] < 75)
+						gpa = 2.6;
+					else if (arr[i] >= 65 && arr[i] < 70)
+						gpa = 2.4;
+					else if (arr[i] >= 60 && arr[i] < 65)
+						gpa = 2.2;
+					else if (arr[i] >= 50 && arr[i] < 60)
+						gpa = 2;
+					else if (arr[i] < 50)
+						gpa = 0;
 
-			 if (i==0||i==8||i==13) 
-				 totalGpa_hrs += gpa * 2; 
-			 else if (i == 6 || i == 12 || i == 14)
-				 totalGpa_hrs += gpa;
-			 else
-				 totalGpa_hrs += gpa * 3; 
-		 }
-		 float res = (float)totalGpa_hrs / 36;
-		 label18->Text = System::Convert::ToString(res);
-		 if (res > 3)
-			 label7->Text = "Wonderful, hope to always be\n at the top ";
-		 else
-			 label7->Text = " You need to put in more\n effort and good luck in the future";  
+					if (i == 0 || i == 8 || i == 13)
+						totalGpa_hrs += gpa * 2;
+					else if (i == 6 || i == 12 || i == 14)
+						totalGpa_hrs += gpa;
+					else
+						totalGpa_hrs += gpa * 3;
+				}
+				float res = (float)totalGpa_hrs / 36;
+				label18->Text = System::Convert::ToString(res);
+				if (res > 3)
+					label7->Text = "Wonderful, hope to always be\n at the top ";
+				else
+					label7->Text = " You need to put in more\n effort and good luck in the future";
+			}
+		}
+	
 	} 
 private: System::Void label7_Click(System::Object^ sender, System::EventArgs^ e) {
 }

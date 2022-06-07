@@ -1,8 +1,10 @@
-﻿#pragma once
+﻿#pragma once 
+
 #include <string>
 #include <iostream>
 #include <algorithm>
 #include <cmath>
+bool isEmpty(System::Windows::Forms::TextBox^ x); 
 namespace Project3 {
 
 	using namespace System;
@@ -3781,42 +3783,55 @@ private: System::Void MyFormphysics_Load(System::Object^ sender, System::EventAr
 }
 	   public: float cnt1 = 0, k = 0, x = 0;
 private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (cnt1 == 0)
-	{  
-		k = System::Convert::ToDouble(textBox1->Text);
-		label11->Text = "X";
-		label10->Text = "";
+	if (isEmpty(textBox1)) 
+		label10->Text = "enter an input";  
+	else
+	{
+		if (cnt1 == 0)
+		{
+			k = System::Convert::ToDouble(textBox1->Text);
+			label11->Text = "X";
+			label10->Text = "";
+		}
+		else if (cnt1 == 1)
+		{
+			x = System::Convert::ToDouble(textBox1->Text);
+			label11->Text = "K";
+			label10->Text = System::Convert::ToString((float)(-1 * k * x)) + " N";
+			cnt1 = -1;
+		}
+		cnt1++;
 	}
-	else if (cnt1 == 1)
-	{ 
-		x = System::Convert::ToDouble(textBox1->Text);
-		label11->Text = "K";
-		label10->Text = System::Convert::ToString((float)(-1 * k * x))+" N";
-		cnt1 = -1; 
-	}  
-	cnt1++;
 }
 	public: float cnt2 = 0, m = 0;
 private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (cnt2 == 0)
+	if (isEmpty(textBox2)) 
+		label13->Text = "enter an input"; 
+	else
 	{
-		k = System::Convert::ToDouble(textBox2->Text);
-		label14->Text = "X";
-		label13->Text = "";
+		if (cnt2 == 0)
+		{
+			k = System::Convert::ToDouble(textBox2->Text);
+			label14->Text = "X";
+			label13->Text = "";
+		}
+		else if (cnt2 == 1)
+		{
+			x = System::Convert::ToDouble(textBox2->Text);
+			label14->Text = "m";
+		}
+		else if (cnt2 == 2)
+		{
+			m = System::Convert::ToDouble(textBox2->Text);
+			label14->Text = "K";
+			if (m == 0)
+				label13->Text = "m can not be zero";
+			else
+			label13->Text = System::Convert::ToString((-1 * k * x) / m) + " m/s/s";
+			cnt2 = -1;
+		}
+		cnt2++;
 	}
-	else if (cnt2 == 1)
-	{
-		x = System::Convert::ToDouble(textBox2->Text);
-		label14->Text = "m";
-	}
-	else if (cnt2 == 2)
-	{
-		m = System::Convert::ToDouble(textBox2->Text);
-		label14->Text = "K";
-		label13->Text = System::Convert::ToString((-1 * k * x)/m)+" m/s/s";
-		cnt2 = -1;
-	}
-	cnt2++;
 }
 private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 	panel3->Show();
@@ -3827,147 +3842,193 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 }
 	   public: float cnt3=0,w = 0, Q = 0, A = 0;
 private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (cnt3 == 0)
+	if (isEmpty(textBox3))
 	{
-		A = System::Convert::ToDouble(textBox3->Text);
-		label17->Text = "w";
-		label18->Text = "";
-		label37->Text = "";
-		label39->Text = "";
+		label18->Text = "enter an input";
+		label37->Text = "enter an input";
+		label39->Text = "enter an input";
 	}
-	else if (cnt3 == 1)
+	else
 	{
-		w = System::Convert::ToDouble(textBox3->Text);
-		label17->Text = "Q";
+		if (cnt3 == 0)
+		{
+			A = System::Convert::ToDouble(textBox3->Text);
+			label17->Text = "w";
+			label18->Text = "";
+			label37->Text = "";
+			label39->Text = "";
+		}
+		else if (cnt3 == 1)
+		{
+			w = System::Convert::ToDouble(textBox3->Text);
+			label17->Text = "Q";
+		}
+		else if (cnt3 == 2)
+		{
+			Q = System::Convert::ToDouble(textBox3->Text);
+			label17->Text = "A";
+			std::string str = "X ( t ) = " + std::to_string(A) +
+				" cos ( " + std::to_string(w) + " t + " + std::to_string(Q) + " )";
+			String^ str2 = gcnew String(str.c_str());
+			label18->Text = str2;
+			label37->Text = System::Convert::ToString(-1 * w * A) +
+				" sin (" + System::Convert::ToString(w) + " t  + " + System::Convert::ToString(Q) + ")";
+			label39->Text = System::Convert::ToString(-1 * w * w * A) +
+				" cos (" + System::Convert::ToString(w) + " t + " + System::Convert::ToString(Q) + ")";
+			cnt3 = -1;
+		}
+		cnt3++;
 	}
-	else if (cnt3 == 2)
-	{
-		Q = System::Convert::ToDouble(textBox3->Text);
-		label17->Text = "A";
-		std::string str = "X ( t ) = " + std::to_string(A) + 
-			" cos ( " + std::to_string(w) + " t + " + std::to_string(Q)+" )";
-		String^ str2 = gcnew String(str.c_str());
-		label18->Text = str2;
-		label37->Text = System::Convert::ToString(-1 * w * A) +
-			" sin ("+ System::Convert::ToString(w)+" t  + "+ System::Convert::ToString(Q)+")";
-		label39->Text= System::Convert::ToString(-1 * w *w* A) +
-			" cos (" + System::Convert::ToString(w) + " t + " + System::Convert::ToString(Q)+")";
-		cnt3 = -1;
-	}
-	cnt3++;
 }
 	   public: int cnt4 = 0;
 private: System::Void button10_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (cnt4 == 0)
+	if (isEmpty(textBox4))
+		label20->Text = "enter a input";
+	else
 	{
-		k = System::Convert::ToDouble(textBox4->Text);
-		label21->Text = "m";
-		label20->Text = "";
-	} 
-	else if (cnt4 == 1)
-	{
-		m = System::Convert::ToDouble(textBox4->Text);
-		label21->Text = "K";  
-		label20->Text = "w = "+System::Convert::ToString((float)(sqrt(k / m)))+" rad/s" +
-			", T = "+ System::Convert::ToString((float)(2*3.14)/(sqrt(m / k)))+" Sec" +
-			", f = "+ System::Convert::ToString((float)((1/(2 * 3.14)) * (sqrt(k / m))))+" HZ";
-		cnt4 = -1;
+		if (cnt4 == 0)
+		{
+			k = System::Convert::ToDouble(textBox4->Text);
+			label21->Text = "m";
+			label20->Text = "";
+		}
+		else if (cnt4 == 1)
+		{
+			m = System::Convert::ToDouble(textBox4->Text);
+			label21->Text = "K";
+			if (m == 0 || k / m < 0)
+				label20->Text = "enter a valid input";
+			else
+			label20->Text = "w = " + System::Convert::ToString((float)(sqrt(k / m))) + " rad/s" +
+				", T = " + System::Convert::ToString((float)(2 * 3.14) / (sqrt(m / k))) + " Sec" +
+				", f = " + System::Convert::ToString((float)((1 / (2 * 3.14)) * (sqrt(k / m)))) + " HZ";
+			cnt4 = -1;
+		}
+		cnt4++;
 	}
-	cnt4++; 
 }
 	   public: float cnt5 = 0,v = 0;
 private: System::Void button11_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (cnt5 == 0)
+	if (isEmpty(textBox5))
+		label24->Text = "enter an input";
+	else
 	{
-		m = System::Convert::ToDouble(textBox5->Text);
-		label23->Text = "v";
-		label24->Text = "";
+		if (cnt5 == 0)
+		{
+			m = System::Convert::ToDouble(textBox5->Text);
+			label23->Text = "v";
+			label24->Text = "";
+		}
+		else if (cnt5 == 1)
+		{
+			v = System::Convert::ToDouble(textBox5->Text);
+			label23->Text = "m";
+			label24->Text = System::Convert::ToString((float)(.5 * m * v * v)) + " J";
+			cnt5 = -1;
+		}
+		cnt5++;
 	}
-	else if (cnt5 == 1)
-	{
-		v = System::Convert::ToDouble(textBox5->Text);
-		label23->Text = "m";
-		label24->Text = System::Convert::ToString((float)(.5 * m * v * v)) + " J";
-		cnt5 = -1;
-	}
-	cnt5++;
 
 
 }
 	   public: int cnt6 = 0;
 private: System::Void button12_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (cnt6 == 0)
+	if (isEmpty(textBox6))
+		label27->Text = "enter an input";
+	else
 	{
-		k = System::Convert::ToDouble(textBox6->Text);
-		label26->Text = "X";
-		label27->Text = "";
+		if (cnt6 == 0)
+		{
+			k = System::Convert::ToDouble(textBox6->Text);
+			label26->Text = "X";
+			label27->Text = "";
+		}
+		else if (cnt6 == 1)
+		{
+			x = System::Convert::ToDouble(textBox6->Text);
+			label26->Text = "K";
+			label27->Text = System::Convert::ToString((float)(.5 * k * x * x)) + " J";
+			cnt6 = -1;
+		}
+		cnt6++;
 	}
-	else if (cnt6 == 1)
-	{
-		x = System::Convert::ToDouble(textBox6->Text);
-		label26->Text = "K";
-		label27->Text = System::Convert::ToString((float)(.5 * k*x*x)) + " J";
-		cnt6 = -1;
-	}
-	cnt6++;
 
 }
 	   public: int cnt7 = 0;
 private: System::Void button13_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (cnt7 == 0)
+	if (isEmpty(textBox7))
+		label30->Text = "enter an input";
+	else
 	{
-		k = System::Convert::ToDouble(textBox7->Text);
-		label29->Text = "A";
-		label30->Text = "";
+
+		if (cnt7 == 0)
+		{
+			k = System::Convert::ToDouble(textBox7->Text);
+			label29->Text = "A";
+			label30->Text = "";
+		}
+		else if (cnt7 == 1)
+		{
+			A = System::Convert::ToDouble(textBox7->Text);
+			label29->Text = "K";
+			label30->Text = System::Convert::ToString(.5 * k * A * A) + " J";
+			cnt7 = -1;
+		}
+		cnt7++;
 	}
-	else if (cnt7 == 1)
-	{
-		A = System::Convert::ToDouble(textBox7->Text);
-		label29->Text = "K";
-		label30->Text = System::Convert::ToString(.5 * k *A*A) + " J";
-		cnt7 = -1;
-	}
-	cnt7++;
 }
 	   public: int cnt8 = 0;
 private: System::Void button14_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (cnt8 == 0)
+	if (isEmpty(textBox8))
+		label33->Text = "enter an input";
+	else
 	{
-		w = System::Convert::ToDouble(textBox8->Text);
-		label32->Text = "A";
-		label33->Text = "";
+		if (cnt8 == 0)
+		{
+			w = System::Convert::ToDouble(textBox8->Text);
+			label32->Text = "A";
+			label33->Text = "";
+		}
+		else if (cnt8 == 1)
+		{
+			A = System::Convert::ToDouble(textBox8->Text);
+			label32->Text = "X";
+			label33->Text = "";
+		}
+		else if (cnt8 == 2)
+		{
+			x = System::Convert::ToDouble(textBox8->Text);
+			label32->Text = "w";
+			if ((A * A - x * x) < 0)
+				label33->Text = "enter a valid input";
+			else
+			label33->Text = System::Convert::ToString(w * sqrt(A * A - x * x)) + " m/s";
+			cnt8 = -1;
+		}
+		cnt8++;
 	}
-	else if (cnt8 == 1)
-	{
-		A = System::Convert::ToDouble(textBox8->Text);
-		label32->Text = "X";
-		label33->Text = "";
-	}
-	else if (cnt8 == 2)
-	{
-		x = System::Convert::ToDouble(textBox8->Text);
-		label32->Text = "w";
-		label33->Text = System::Convert::ToString(w*sqrt(A*A-x*x)) + " m/s";
-		cnt8 = -1;
-	}
-	cnt8++;
 }
 	   public:  float g = 0, cnt9 = 0, l = 0;
 private: System::Void button15_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (cnt9 == 0)
+	if (isEmpty(textBox9))
+		label36->Text = "enter an input";
+	else
 	{
-		g = System::Convert::ToDouble(textBox9->Text);
-		label35->Text = "L";
-		label36->Text = "";
+		if (cnt9 == 0)
+		{
+			g = System::Convert::ToDouble(textBox9->Text);
+			label35->Text = "L";
+			label36->Text = "";
+		}
+		else if (cnt9 == 1)
+		{
+			l = System::Convert::ToDouble(textBox9->Text);
+			label35->Text = "g";
+			label36->Text = System::Convert::ToString(sqrt(g / l)) + " rad/s";
+			cnt9 = -1;
+		}
+		cnt9++;
 	}
-	else if (cnt9 == 1)
-	{
-		l = System::Convert::ToDouble(textBox9->Text);
-		label35->Text = "g";
-		label36->Text = System::Convert::ToString(sqrt(g/l)) + " rad/s";
-		cnt9 = -1;
-	}
-	cnt9++;
 
 }
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -3986,920 +4047,1187 @@ private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e
 }
 	   public: float y = 0, cnt10 = 0,t=0;
 private: System::Void button16_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (cnt10 == 0)
+	if (isEmpty(textBox10))
+		label45->Text = "enter an input";
+	else
 	{
-		y = System::Convert::ToDouble(textBox10->Text);
-		label44->Text = "T";
-		panel6->Hide();
-		label45->Text = "";
+		if (cnt10 == 0)
+		{
+			y = System::Convert::ToDouble(textBox10->Text);
+			label44->Text = "T";
+			panel6->Hide();
+			label45->Text = "";
+		}
+		else if (cnt10 == 1)
+		{
+			t = System::Convert::ToDouble(textBox10->Text);
+			panel6->Show();
+			if (t == 0)
+				label45->Text = "t can not be zero, try again";
+			else
+			label45->Text = System::Convert::ToString((float)(y / t)) + " m/s";
+			cnt10 = -1;
+		}
+		cnt10++;
 	}
-	else if (cnt10 == 1)
-	{
-		t = System::Convert::ToDouble(textBox10->Text); 
-		panel6->Show();
-		label45->Text = System::Convert::ToString((float)(y/t)) + " m/s";
-		cnt10 = -1;
-	}  
-	cnt10++;
 
 }
 	   public:float f = 0, cnt11 = 0;
 private: System::Void button17_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (cnt11 == 0)
+	if (isEmpty(textBox11))
+		label47->Text = "enter an input";
+	else
 	{
-		y = System::Convert::ToDouble(textBox11->Text);
-		label46->Text = ", f";
-		panel7->Hide();
-		label47->Text = "";
+		if (cnt11 == 0)
+		{
+			y = System::Convert::ToDouble(textBox11->Text);
+			label46->Text = ", f";
+			panel7->Hide();
+			label47->Text = "";
+		}
+		else if (cnt11 == 1)
+		{
+			f = System::Convert::ToDouble(textBox11->Text);
+			panel7->Show();
+			label47->Text = System::Convert::ToString(y * f) + " m/s";
+			cnt11 = -1;
+		}
+		cnt11++;
 	}
-	else if (cnt11 == 1)
-	{
-		f = System::Convert::ToDouble(textBox11->Text);
-		panel7->Show();
-		label47->Text = System::Convert::ToString(y*f) + " m/s";
-		cnt11 = -1;
-	}
-	cnt11++;
 
 }
 	   public: int cnt12 = 0;
 private: System::Void button18_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (cnt12 == 0)
+	if (isEmpty(textBox12))
 	{
-		A = System::Convert::ToDouble(textBox12->Text);
-		label55->Text = "k";
-		label52->Text = "";
-		label53->Text = "";
-		label54->Text = "";
-	}
-	else if (cnt12 == 1)
+		label52->Text = "enter an input";
+		label53->Text = "enter an input";
+		label54->Text = "enter an input";
+	} 
+	else
 	{
-		k = System::Convert::ToDouble(textBox12->Text);
-		label55->Text = "w";
+		if (cnt12 == 0)
+		{
+			A = System::Convert::ToDouble(textBox12->Text);
+			label55->Text = "k";
+			label52->Text = "";
+			label53->Text = "";
+			label54->Text = "";
+		}
+		else if (cnt12 == 1)
+		{
+			k = System::Convert::ToDouble(textBox12->Text);
+			label55->Text = "w";
+		}
+		else if (cnt12 == 2)
+		{
+			w = System::Convert::ToDouble(textBox12->Text);
+			label55->Text = "A";
+			std::string str = std::to_string(A) +
+				" sin ( " + std::to_string(k * 1) + " x +" + std::to_string(w * 1) + " t )";
+			String^ str2 = gcnew String(str.c_str());
+			label52->Text = str2;
+			label53->Text = System::Convert::ToString(-1 * w * A) +
+				" cos (" + System::Convert::ToString(k) + " x + " + System::Convert::ToString(w) + " t  )";
+			label54->Text = System::Convert::ToString(-1 * w * w * A) +
+				" sin (" + System::Convert::ToString(k) + " x + " + System::Convert::ToString(w) + " t  )";
+			cnt12 = -1;
+		}
+		cnt12++;
 	}
-	else if (cnt12 == 2)
-	{
-		w = System::Convert::ToDouble(textBox12->Text);
-		label55->Text = "A";
-		std::string str = std::to_string(A) +
-			" sin ( " + std::to_string(k*1)+" x +"+ std::to_string(w*1) + " t )" ;
-		String^ str2 = gcnew String(str.c_str());
-		label52->Text = str2;
-		label53->Text = System::Convert::ToString(-1 * w * A) +
-			" cos (" + System::Convert::ToString(k) + " x + " + System::Convert::ToString(w) + " t  )";
-		label54->Text = System::Convert::ToString(-1 * w * w * A) +
-			" sin (" + System::Convert::ToString(k) + " x + " + System::Convert::ToString(w) + " t  )";
-		cnt12 = -1;
-	}
-	cnt12++;
 }
 	   public: int cnt13 = 0;
 private: System::Void button19_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (cnt13 == 0)
+	if (isEmpty(textBox13))
+		label58->Text = "enter an input";
+	else
 	{
-		m = System::Convert::ToDouble(textBox13->Text);
-		label57->Text = "T";
-		panel8->Hide();
-		label58->Text = "";
+		if (cnt13 == 0)
+		{
+			m = System::Convert::ToDouble(textBox13->Text);
+			label57->Text = "T";
+			panel8->Hide();
+			label58->Text = "";
+		}
+		else if (cnt13 == 1)
+		{
+			t = System::Convert::ToDouble(textBox13->Text);
+			panel8->Show();
+			if (m == 0 || t / m < 0)
+				label58->Text = "enter a valid input";
+			else
+			label58->Text = System::Convert::ToString((float)sqrt(t / m)) + " m/s";
+			cnt13 = -1;
+		}
+		cnt13++;
 	}
-	else if (cnt13 == 1)
-	{
-		t = System::Convert::ToDouble(textBox13->Text);
-		panel8->Show();
-		label58->Text = System::Convert::ToString((float)sqrt(t/m)) + " m/s";
-		cnt13 = -1;
-	}
-	cnt13++;
 }
 	   public: float cnt14 = 0;
 private: System::Void button20_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (cnt14 == 0)
+	if (isEmpty(textBox14))
+		label62->Text = "enter an input";
+	else
 	{
-		m = System::Convert::ToDouble(textBox14->Text);
-		label61->Text = " w";
-		label62->Text = "";
-		panel10->Hide();
-		panel9->Hide();
+		if (cnt14 == 0)
+		{
+			m = System::Convert::ToDouble(textBox14->Text);
+			label61->Text = " w";
+			label62->Text = "";
+			panel10->Hide();
+			panel9->Hide();
+		}
+		else if (cnt14 == 1)
+		{
+			w = System::Convert::ToDouble(textBox14->Text);
+			label61->Text = " A";
+			panel10->Hide();
+			panel9->Hide();
+		}
+		else if (cnt14 == 2)
+		{
+			A = System::Convert::ToDouble(textBox14->Text);
+			panel10->Show();
+			panel9->Hide();
+		}
+		else if (cnt14 == 3)
+		{
+			y = System::Convert::ToDouble(textBox14->Text);
+			panel9->Show();
+			panel10->Hide();
+			label62->Text = System::Convert::ToString(.25 * m * w * w * A * A * y) + " J";
+			cnt14 = -1;
+		}
+		cnt14++;
 	}
-	else if (cnt14 == 1)
-	{
-		w = System::Convert::ToDouble(textBox14->Text);
-		label61->Text = " A"; 
-		panel10->Hide();
-		panel9->Hide();
-	}
-	else if (cnt14 == 2)
-	{
-		A = System::Convert::ToDouble(textBox14->Text);
-		panel10->Show();
-		panel9->Hide();
-	}
-	else if (cnt14 == 3)
-	{
-		y = System::Convert::ToDouble(textBox14->Text);
-		panel9->Show();
-		panel10->Hide();
-		label62->Text = System::Convert::ToString(.25 * m * w * w * A * A * y) + " J";
-		cnt14 = -1;
-	}
-	cnt14++;
 
 }
 	 public: int cnt15 = 0;
 private: System::Void button21_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (cnt15 == 0)
+	if (isEmpty(textBox15))
+		label65->Text = "enter an input";
+	else
 	{
-		m = System::Convert::ToDouble(textBox15->Text);
-		label64->Text = " w";
-		label65->Text = "";
-		panel11->Hide();
-		panel12->Hide();
+		if (cnt15 == 0)
+		{
+			m = System::Convert::ToDouble(textBox15->Text);
+			label64->Text = " w";
+			label65->Text = "";
+			panel11->Hide();
+			panel12->Hide();
+		}
+		else if (cnt15 == 1)
+		{
+			w = System::Convert::ToDouble(textBox15->Text);
+			label64->Text = " A";
+			panel11->Hide();
+			panel12->Hide();
+		}
+		else if (cnt15 == 2)
+		{
+			A = System::Convert::ToDouble(textBox15->Text);
+			panel11->Hide();
+			panel12->Show();
+		}
+		else if (cnt15 == 3)
+		{
+			y = System::Convert::ToDouble(textBox15->Text);
+			panel11->Show();
+			panel12->Hide();
+			label65->Text = System::Convert::ToString(.5 * m * w * w * A * A * y) + "j";
+			cnt15 = -1;
+		}
+		cnt15++;
 	}
-	else if (cnt15 == 1)
-	{
-		w = System::Convert::ToDouble(textBox15->Text);
-		label64->Text = " A";
-		panel11->Hide();
-		panel12->Hide();
-	}
-	else if (cnt15 == 2)
-	{
-		A = System::Convert::ToDouble(textBox15->Text); 
-		panel11->Hide();
-		panel12->Show();
-	}
-	else if (cnt15 == 3)
-	{
-		y = System::Convert::ToDouble(textBox15->Text);
- 		panel11->Show();
-		panel12->Hide();
-		label65->Text = System::Convert::ToString(.5 * m * w * w * A * A * y) + "j";
-		cnt15 = -1;
-	}
-	cnt15++;
 }
 	   public: int cnt16 = 0;
 private: System::Void button22_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (cnt16 == 0)
+	if (isEmpty(textBox16))
+		label68->Text = "enter an input";
+	else
 	{
-		m = System::Convert::ToDouble(textBox16->Text);
-		label67->Text = "w";
-		label68->Text = "";
-		panel13->Hide();
+		if (cnt16 == 0)
+		{
+			m = System::Convert::ToDouble(textBox16->Text);
+			label67->Text = "w";
+			label68->Text = "";
+			panel13->Hide();
+		}
+		else if (cnt16 == 1)
+		{
+			w = System::Convert::ToDouble(textBox16->Text);
+			label67->Text = " A";
+			panel13->Hide();
+		}
+		else if (cnt16 == 2)
+		{
+			A = System::Convert::ToDouble(textBox16->Text);
+			label67->Text = "v";
+			panel13->Hide();
+		}
+		else if (cnt16 == 3)
+		{
+			v = System::Convert::ToDouble(textBox16->Text);
+			label67->Text = "μ";
+			panel13->Show();
+			label68->Text = System::Convert::ToString(.5 * m * w * w * A * A * v) + " watt";
+			cnt16 = -1;
+		}
+		cnt16++;
 	}
-	else if (cnt16 == 1)
-	{
-		w = System::Convert::ToDouble(textBox16->Text);
-		label67->Text = " A";
-		panel13->Hide();
-	}
-	else if (cnt16 == 2)
-	{
-		A = System::Convert::ToDouble(textBox16->Text);
-		label67->Text = "v";
-		panel13->Hide();
-	}
-	else if (cnt16 == 3)
-	{
-		v = System::Convert::ToDouble(textBox16->Text);
-		label67->Text = "μ";
-		panel13->Show();
-		label68->Text = System::Convert::ToString(.5 * m * w * w * A * A * v) + " watt";
-		cnt16 = -1;
-	}
-	cnt16++;
 
 
 }
 	   int cnt17 = 0;
 private: System::Void button23_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (cnt17 == 0)
+	if (isEmpty(textBox17))
+		label70->Text = "enter an input";
+	else
 	{
-		w = System::Convert::ToDouble(textBox17->Text);
-		label69->Text = " K";
-		label70->Text = "";
+		if (cnt17 == 0)
+		{
+			w = System::Convert::ToDouble(textBox17->Text);
+			label69->Text = " K";
+			label70->Text = "";
+		}
+		else if (cnt17 == 1)
+		{
+			k = System::Convert::ToDouble(textBox17->Text);
+			label69->Text = " w";
+			if (k == 0)
+				label70->Text = "enter a valid input";
+			else
+			label70->Text = System::Convert::ToString(w / k) + "m/s";
+			cnt17 = -1;
+		}
+		cnt17++;
 	}
-	else if (cnt17 == 1)
-	{
-		k = System::Convert::ToDouble(textBox17->Text);
-		label69->Text = " w";
-		label70->Text = System::Convert::ToString(w/k) + "m/s";
-		cnt17 = -1;
-	}
-	cnt17++;
 }
 	   public: float cnt18 = 0, B = 0, s = 0;
 private: System::Void button24_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (cnt18 == 0)
+	if (isEmpty(textBox18))
+		label73->Text = "enter an input";
+	else
 	{
-		B = System::Convert::ToDouble(textBox18->Text);
-		label72->Text = " s";
-		label73->Text = "";
+		if (cnt18 == 0)
+		{
+			B = System::Convert::ToDouble(textBox18->Text);
+			label72->Text = " s";
+			label73->Text = "";
+		}
+		else if (cnt18 == 1)
+		{
+			s = System::Convert::ToDouble(textBox18->Text);
+			label72->Text = " K";
+			label73->Text = "";
+		}
+		else if (cnt18 == 2)
+		{
+			k = System::Convert::ToDouble(textBox18->Text);
+			label72->Text = " B";
+			label73->Text = System::Convert::ToString(B * s * k) + " pa";
+			cnt18 = -1;
+		}
+		cnt18++;
 	}
-	else if (cnt18 == 1)
-	{
-		s = System::Convert::ToDouble(textBox18->Text);
-		label72->Text = " K";
-		label73->Text = "";
-	}
-	else if (cnt18 == 2)
-	{
-		k = System::Convert::ToDouble(textBox18->Text);
-		label72->Text = " B";
-		label73->Text = System::Convert::ToString(B*s*k) + " pa";
-		cnt18 = -1;
-	}
-	cnt18++;
 
 }
 	   public: float cnt19 = 0,p=0;
 private: System::Void button25_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (cnt19 == 0)
+	if (isEmpty(textBox19))
+		label75->Text = "enter an input";
+	else
 	{
-		p = System::Convert::ToDouble(textBox19->Text);
-		label74->Text = "v";
-		label75->Text = "";
-		panel14->Hide();
+		if (cnt19 == 0)
+		{
+			p = System::Convert::ToDouble(textBox19->Text);
+			label74->Text = "v";
+			label75->Text = "";
+			panel14->Hide();
+		}
+		else if (cnt19 == 1)
+		{
+			v = System::Convert::ToDouble(textBox19->Text);
+			label74->Text = "w";
+			panel14->Hide();
+		}
+		else if (cnt19 == 2)
+		{
+			w = System::Convert::ToDouble(textBox19->Text);
+			label74->Text = " s";
+			panel14->Hide();
+		}
+		else if (cnt19 == 3)
+		{
+			s = System::Convert::ToDouble(textBox19->Text);
+			panel14->Show();
+			label75->Text = System::Convert::ToString(p * v * s * w) + " pa";
+			cnt19 = -1;
+		}
+		cnt19++;
 	}
-	else if (cnt19 == 1)
-	{
-		v = System::Convert::ToDouble(textBox19->Text);
-		label74->Text = "w"; 
-		panel14->Hide();
-	}
-	else if (cnt19 == 2)
-	{
-		w = System::Convert::ToDouble(textBox19->Text);
-		label74->Text = " s"; 
-		panel14->Hide();
-	}
-	else if (cnt19 == 3)
-	{
-		s = System::Convert::ToDouble(textBox19->Text);
- 		panel14->Show();
-		label75->Text = System::Convert::ToString(p*v*s*w) + " pa";
-		cnt19 = -1;
-	}
-	cnt19++;
 
 }
 	   public: float cnt20 = 0,b=0;
 private: System::Void button26_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (cnt20 == 0)
+	if (isEmpty(textBox20))
+		label78->Text = "enter an input";
+	else
 	{
-		b = System::Convert::ToDouble(textBox20->Text);
-		label77->Text = " v";
-		label78->Text = "";
+		if (cnt20 == 0)
+		{
+			b = System::Convert::ToDouble(textBox20->Text);
+			label77->Text = " v";
+			label78->Text = "";
+		}
+		else if (cnt20 == 1)
+		{
+			v = System::Convert::ToDouble(textBox20->Text);
+			label77->Text = "b";
+			label78->Text = System::Convert::ToString(-1 * b * v) + " N";
+			cnt20 = -1;
+		}
+		cnt20++;
 	}
-	else if (cnt20 == 1)
-	{
-		v = System::Convert::ToDouble(textBox20->Text);
-		label77->Text = "b";
-		label78->Text = System::Convert::ToString(-1 * b * v) + " N";
-		cnt20 = -1;
-	}
-	cnt20++;
 
 }
 	   public: int cnt21 = 0;
 private: System::Void button27_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (cnt21 == 0)
+	if (isEmpty(textBox21))
+		label81->Text = "enter an input";
+	else
 	{
-		k = System::Convert::ToDouble(textBox21->Text);
-		label80->Text = "m";
-		label81->Text = "";
+		if (cnt21 == 0)
+		{
+			k = System::Convert::ToDouble(textBox21->Text);
+			label80->Text = "m";
+			label81->Text = "";
+		}
+		else if (cnt21 == 1)
+		{
+			m = System::Convert::ToDouble(textBox21->Text);
+			label80->Text = "b";
+		}
+		else if (cnt21 == 2)
+		{
+			b = System::Convert::ToDouble(textBox21->Text);
+			label80->Text = "K";
+			if (m == 0)
+				label81->Text = "m can not be 0";
+			else
+			label81->Text = System::Convert::ToString((float)(sqrt(k / m - pow((b / (2 * m)), 2)))) + " rad/s";
+			cnt21 = -1;
+		}
+		cnt21++;
 	}
-	else if (cnt21 == 1)
-	{
-		m = System::Convert::ToDouble(textBox21->Text);
-		label80->Text = "b";
-	} 
-	else if (cnt21 == 2)
-	{
-		b = System::Convert::ToDouble(textBox21->Text);
-		label80->Text = "K";
-		label81->Text = System::Convert::ToString((float)(sqrt(k / m - pow( (b / (2 * m)),2))))+ " rad/s";
-		cnt21 = -1;
-	}
-	cnt21++;
 
 }
 	   public: float cnt22 = 0,w0=0;
 private: System::Void button28_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (cnt22 == 0)
+	if (isEmpty(textBox22))
+		label84->Text = "enter an input";
+	else
 	{
-		f = System::Convert::ToDouble(textBox22->Text);
-		label83->Text = "m";
-		label84->Text = "";
+		if (cnt22 == 0)
+		{
+			f = System::Convert::ToDouble(textBox22->Text);
+			label83->Text = "m";
+			label84->Text = "";
+		}
+		else if (cnt22 == 1)
+		{
+			m = System::Convert::ToDouble(textBox22->Text);
+			label83->Text = "w";
+		}
+		else if (cnt22 == 2)
+		{
+			w = System::Convert::ToDouble(textBox22->Text);
+			label83->Text = "w0";
+		}
+		else if (cnt22 == 3)
+		{
+			w0 = System::Convert::ToDouble(textBox22->Text);
+			label83->Text = "b";
+		}
+		else if (cnt22 == 4)
+		{
+			b = System::Convert::ToDouble(textBox22->Text);
+			label83->Text = "f";
+			if((m * sqrt(pow((w * w - w0 * w0), 2) + pow(((b * w) / m), 2)))==0|| (pow((w * w - w0 * w0), 2) + pow(((b * w) / m), 2)<0||m==0))
+				label84->Text ="enter a valid input";
+			else
+			label84->Text = System::Convert::ToString((float)(f / (m * sqrt(pow((w * w - w0 * w0), 2) + pow(((b * w) / m), 2))))) + " m";
+			cnt22 = -1;
+		}
+		cnt22++;
 	}
-	else if (cnt22 == 1)
-	{
-		m = System::Convert::ToDouble(textBox22->Text);
-		label83->Text = "w";
-	}
-	else if (cnt22 == 2)
-	{
-		w = System::Convert::ToDouble(textBox22->Text);
-		label83->Text = "w0";
-	}
-	else if (cnt22 == 3)
-	{
-		w0 = System::Convert::ToDouble(textBox22->Text);
-		label83->Text = "b";
-	} 
-	else if (cnt22 == 4)
-	{
-		b = System::Convert::ToDouble(textBox22->Text);
-		label83->Text = "f";
-		label84->Text = System::Convert::ToString((float)(f/(m*sqrt(pow((w*w-w0*w0),2)+pow(((b*w)/m),2))))) + " m";
-		cnt22 = -1;
-	}
-	cnt22++;
 
 }
 	   public: int cnt23 = 0;
 private: System::Void button29_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (cnt23 == 0)
+	if (isEmpty(textBox23))
+		label87->Text = "enter an input";
+	else
 	{
-		p = System::Convert::ToDouble(textBox23->Text);
-		panel30->Hide();
-		label86->Text = "B";
-		label87->Text = "";
+		if (cnt23 == 0)
+		{
+			p = System::Convert::ToDouble(textBox23->Text);
+			panel30->Hide();
+			label86->Text = "B";
+			label87->Text = "";
+		}
+		else if (cnt23 == 1)
+		{
+			B = System::Convert::ToDouble(textBox23->Text);
+			panel30->Show();
+			if (p == 0|| B / p<0)
+				label87->Text = "enter a valid input";
+			else
+			label87->Text = System::Convert::ToString((float)(sqrt(B / p))) + " m/s";
+			cnt23 = -1;
+		}
+		cnt23++;
 	}
-	else if (cnt23 == 1)
-	{
-		B = System::Convert::ToDouble(textBox23->Text);
-		panel30->Show();
-		label87->Text = System::Convert::ToString((float)(sqrt(B/p))) + " m/s";
-		cnt23 = -1;
-	}
-	cnt23++;
 
 }
 	   public:float tc =0;
 private: System::Void button30_Click(System::Object^ sender, System::EventArgs^ e) {
-	tc = System::Convert::ToDouble(textBox24->Text);
-	label89->Text = System::Convert::ToString(331*sqrt(1+tc/273)) + " m/s"; 
+	if (isEmpty(textBox24))
+		label89->Text = "enter an input";
+	else
+	{
+		tc = System::Convert::ToDouble(textBox24->Text);
+		if ((1 + tc / 273) == 0)
+			label89->Text = "enter avalid input";
+		else
+		label89->Text = System::Convert::ToString(331 * sqrt(1 + tc / 273)) + " m/s";
+	}
 }
 	   public: int cnt25 = 0;
 
 private: System::Void button31_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (cnt25 == 0)
+	if (isEmpty(textBox25))
+		label92->Text = "enter an input";
+	else
 	{
-		p = System::Convert::ToDouble(textBox25->Text);
-		label91->Text = "v";
-		label92->Text = "";
-		panel15->Hide();
+		if (cnt25 == 0)
+		{
+			p = System::Convert::ToDouble(textBox25->Text);
+			label91->Text = "v";
+			label92->Text = "";
+			panel15->Hide();
+		}
+		else if (cnt25 == 1)
+		{
+			v = System::Convert::ToDouble(textBox25->Text);
+			label91->Text = "A";
+			panel15->Hide();
+		}
+		else if (cnt25 == 2)
+		{
+			A = System::Convert::ToDouble(textBox25->Text);
+			label91->Text = "T";
+			panel15->Hide();
+		}
+		else if (cnt25 == 3)
+		{
+			t = System::Convert::ToDouble(textBox25->Text);
+			label91->Text = "w";
+			panel15->Hide();
+		}
+		else if (cnt25 == 4)
+		{
+			w = System::Convert::ToDouble(textBox25->Text);
+			label91->Text = "s";
+			panel15->Hide();
+		}
+		else if (cnt25 == 5)
+		{
+			s = System::Convert::ToDouble(textBox25->Text);
+			label91->Text = "ρ";
+			panel15->Show();
+			label92->Text = System::Convert::ToString((float)(.5 * p * v * A * t * w * w * s * s)) + " J";
+			cnt25 = -1;
+		}
+		cnt25++;
 	}
-	else if (cnt25 == 1)
-	{
-		v = System::Convert::ToDouble(textBox25->Text);
-		label91->Text = "A"; 
-		panel15->Hide();
-	}
-	else if (cnt25 == 2)
-	{
-		A = System::Convert::ToDouble(textBox25->Text);
-		label91->Text = "T";
-		panel15->Hide();
-	}
-	else if (cnt25 == 3)
-	{
-		t = System::Convert::ToDouble(textBox25->Text);
-		label91->Text = "w"; 
-		panel15->Hide();
-	}
-	else if (cnt25 == 4)
-	{
-		w = System::Convert::ToDouble(textBox25->Text);
-		label91->Text = "s"; 
-		panel15->Hide();
-	}
-	else if (cnt25 == 5)
-	{
-		s = System::Convert::ToDouble(textBox25->Text);
-		label91->Text = "ρ";
-		panel15->Show();
-		label92->Text = System::Convert::ToString((float)(.5*p*v*A*t*w*w*s*s)) + " J";
-		cnt25 = -1;
-	}
-	cnt25++;
 }
 	   public: int cnt26 = 0;
 
 private: System::Void button32_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (cnt26 == 0)
+	if (isEmpty(textBox26))
+		label95->Text = "enter an input";
+	else
 	{
-		p = System::Convert::ToDouble(textBox26->Text);
-		label94->Text = "v";
-		label95->Text = "";
-		panel16->Hide();
+		if (cnt26 == 0)
+		{
+			p = System::Convert::ToDouble(textBox26->Text);
+			label94->Text = "v";
+			label95->Text = "";
+			panel16->Hide();
+		}
+		else if (cnt26 == 1)
+		{
+			v = System::Convert::ToDouble(textBox26->Text);
+			label94->Text = "A";
+			panel16->Hide();
+		}
+		else if (cnt26 == 2)
+		{
+			A = System::Convert::ToDouble(textBox26->Text);
+			label94->Text = "w";
+			panel16->Hide();
+		}
+		else if (cnt26 == 3)
+		{
+			w = System::Convert::ToDouble(textBox26->Text);
+			label94->Text = "s";
+			panel16->Hide();
+		}
+		else if (cnt26 == 4)
+		{
+			s = System::Convert::ToDouble(textBox26->Text);
+			panel16->Show();
+			label95->Text = System::Convert::ToString((float)(.5 * p * v * A * w * w * s * s)) + " watt";
+			cnt26 = -1;
+		}
+		cnt26++;
 	}
-	else if (cnt26 == 1)
-	{
-		v = System::Convert::ToDouble(textBox26->Text);
-		label94->Text = "A";
-		panel16->Hide();
-	} 
-	else if (cnt26 == 2)
-	{
-		A = System::Convert::ToDouble(textBox26->Text);
-		label94->Text = "w";
-		panel16->Hide();
-	}
-	else if (cnt26 == 3)
-	{
-		w = System::Convert::ToDouble(textBox26->Text);
-		label94->Text = "s";
-		panel16->Hide();
-	}
-	else if (cnt26 == 4)
-	{
-		s = System::Convert::ToDouble(textBox26->Text);
- 		panel16->Show();
-		label95->Text = System::Convert::ToString((float)(.5 * p * v * A * w * w * s * s)) + " watt";
-		cnt26 = -1;
-	}
-	cnt26++;
 }
 	   public: int cnt27 = 0;
 private: System::Void button33_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (cnt27 == 0)
+	if (isEmpty(textBox27))
+		label98->Text = "enter an input";
+	else
 	{
-		p = System::Convert::ToDouble(textBox27->Text);
-		label97->Text = "v";
-		label98->Text = "";
-		panel17->Hide();
-	} 
-	else if (cnt27 == 1)
-	{
-		v = System::Convert::ToDouble(textBox27->Text);
-		label97->Text = "w";
-		panel17->Hide();
+		if (cnt27 == 0)
+		{
+			p = System::Convert::ToDouble(textBox27->Text);
+			label97->Text = "v";
+			label98->Text = "";
+			panel17->Hide();
+		}
+		else if (cnt27 == 1)
+		{
+			v = System::Convert::ToDouble(textBox27->Text);
+			label97->Text = "w";
+			panel17->Hide();
+		}
+		else if (cnt27 == 2)
+		{
+			w = System::Convert::ToDouble(textBox27->Text);
+			label97->Text = "s";
+			panel17->Hide();
+		}
+		else if (cnt27 == 3)
+		{
+			s = System::Convert::ToDouble(textBox27->Text);
+			panel17->Show();
+			label98->Text = System::Convert::ToString((float)(.5 * p * v * w * w * s * s)) + " W/m^2";
+			cnt27 = -1;
+		}
+		cnt27++;
 	}
-	else if (cnt27 == 2)
-	{
-		w = System::Convert::ToDouble(textBox27->Text);
-		label97->Text = "s";
-		panel17->Hide();
-	}
-	else if (cnt27 == 3)
-	{
-		s = System::Convert::ToDouble(textBox27->Text);
- 		panel17->Show();
-		label98->Text = System::Convert::ToString((float)(.5 * p * v * w * w * s * s)) + " W/m^2";
-		cnt27 = -1;
-	}
-	cnt27++;
 }
 	   public: int cnt28 = 0;
 private: System::Void button34_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (cnt28 == 0)
+	if (isEmpty(textBox28))
+		label100->Text = "enter an input";
+	else
 	{
-		p = System::Convert::ToDouble(textBox28->Text);
-		label99->Text = "A";
-		label100->Text = "";
+		if (cnt28 == 0)
+		{
+			p = System::Convert::ToDouble(textBox28->Text);
+			label99->Text = "A";
+			label100->Text = "";
+		}
+		else if (cnt28 == 1)
+		{
+			A = System::Convert::ToDouble(textBox28->Text);
+			label99->Text = "power";
+			if (A == 0)
+				label100->Text = "enter a valid input";
+			else
+			label100->Text = System::Convert::ToString((float)(p / A)) + " W/m^2";
+			cnt28 = -1;
+		}
+		cnt28++;
 	}
-	else if (cnt28 == 1)
-	{
-		A = System::Convert::ToDouble(textBox28->Text);
-		label99->Text = "power";
-		label100->Text = System::Convert::ToString((float)(p/A)) + " W/m^2";
-		cnt28 = -1;
-	}
-	cnt28++; 
 }
 	   public: float cnt29 = 0, I = 0, I0 = 0;
 private: System::Void button35_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (cnt29 == 0)
+	if (isEmpty(textBox29))
+		label103->Text = "enter an input";
+	else
 	{
-		I = System::Convert::ToDouble(textBox29->Text);
-		label102->Text = "I0";
-		label103->Text = "";
+		if (cnt29 == 0)
+		{
+			I = System::Convert::ToDouble(textBox29->Text);
+			label102->Text = "I0";
+			label103->Text = "";
+		}
+		else if (cnt29 == 1)
+		{
+			I0 = System::Convert::ToDouble(textBox29->Text);
+			label102->Text = "I";
+			if (I0 == 0)
+				label103->Text = "I0 cannot be zero";
+			else
+			label103->Text = System::Convert::ToString((float)(10 * log(I / I0))) + " dB";
+			cnt29 = -1;
+		}
+		cnt29++;
 	}
-	else if (cnt29 == 1)
-	{
-		I0 = System::Convert::ToDouble(textBox29->Text);
-		label102->Text = "I";
-		label103->Text = System::Convert::ToString((float)(10*log(I/I0))) + " dB";
-		cnt29 = -1;
-	}
-	cnt29++; 
 }
 	   public:float cnt30 = 0, vs = 0, vl = 0, v0 = 0;
 private: System::Void button36_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (cnt30 == 0)
+	if (isEmpty(textBox30))
 	{
-		f = System::Convert::ToDouble(textBox30->Text);
-		label107->Text = "The speed of the sound";
-		label108->Text = "";
-		label109->Text = "";
-		label110->Text = "";
-		label111->Text = "";
-	}
-	else if (cnt30 == 1)
+		label108->Text = "enter an input";
+		label109->Text = "enter an input";
+		label110->Text = "enter an input";
+		label111->Text = "enter an input";
+	} 
+	else
 	{
-		v0 = System::Convert::ToDouble(textBox30->Text);
-		label107->Text = "The speed of the source"; 
+		if (cnt30 == 0)
+		{
+			f = System::Convert::ToDouble(textBox30->Text);
+			label107->Text = "The speed of the sound";
+			label108->Text = "";
+			label109->Text = "";
+			label110->Text = "";
+			label111->Text = "";
+		}
+		else if (cnt30 == 1)
+		{
+			v0 = System::Convert::ToDouble(textBox30->Text);
+			label107->Text = "The speed of the source";
+		}
+		else if (cnt30 == 2)
+		{
+			vs = System::Convert::ToDouble(textBox30->Text);
+			label107->Text = "The speed of the Observer";
+		}
+		else if (cnt30 == 3)
+		{
+			vl = System::Convert::ToDouble(textBox30->Text);
+			label107->Text = "the frequency";
+			if (v0 == 0)
+			{
+				label108->Text = " v0 cannot be 0";
+				label109->Text = " v0 cannot be 0";
+
+			}
+			else
+			{
+				label108->Text = System::Convert::ToString(f * ((v0 + vl) / v0)) + " Hz";
+				label109->Text = System::Convert::ToString(f * ((v0 - vl) / v0)) + " Hz";
+			}
+			if ((v0 - vs) == 0)
+				label110->Text = "enter valid input";
+			else
+			label110->Text = System::Convert::ToString(f * (v0 / (v0 - vs))) + " Hz";
+			if ((v0 + vs) == 0)
+				label111->Text = "enter valid input";
+			else
+			label111->Text = System::Convert::ToString(f * (v0 / (v0 + vs))) + " Hz";
+			cnt30 = -1;
+		}
+		cnt30++;
 	}
-	else if (cnt30 == 2)
-	{
-		vs = System::Convert::ToDouble(textBox30->Text);
-		label107->Text = "The speed of the Observer"; 
-	}
-	else if (cnt30 == 3)
-	{
-		vl = System::Convert::ToDouble(textBox30->Text);
-		label107->Text = "the frequency";
-		label108->Text = System::Convert::ToString(f*((v0+vl)/v0)) + " Hz";
-		label109->Text = System::Convert::ToString(f*((v0-vl)/v0)) + " Hz";
-		label110->Text = System::Convert::ToString(f* (v0/(v0 - vs))) + " Hz";
-		label111->Text = System::Convert::ToString(f * (v0 / (v0 + vs))) + " Hz";
-		cnt30 = -1;
-	}
-	cnt30++;
 
 }
 	   public: int cnt31 = 0;
 private: System::Void button37_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (cnt31 == 0)
+	if (isEmpty(textBox31))
+		label117->Text = "enter an input";
+	else
 	{
-		f = System::Convert::ToDouble(textBox31->Text);
-		label116->Text = "sound speed";
-		label117->Text = ""; 
+		if (cnt31 == 0)
+		{
+			f = System::Convert::ToDouble(textBox31->Text);
+			label116->Text = "sound speed";
+			label117->Text = "";
+		}
+		else if (cnt31 == 1)
+		{
+			v0 = System::Convert::ToDouble(textBox31->Text);
+			label116->Text = "source speed ";
+		}
+		else if (cnt31 == 2)
+		{
+			vs = System::Convert::ToDouble(textBox31->Text);
+			label116->Text = "Observer speed";
+		}
+		else if (cnt31 == 3)
+		{
+			vl = System::Convert::ToDouble(textBox31->Text);
+			label116->Text = "frequency";
+			if ((v0 + vs) == 0)
+				label117->Text = "enter valid input";
+			else
+			label117->Text = System::Convert::ToString((float)(f * ((v0 + vl) / (v0 + vs)))) + " Hz";
+			cnt31 = -1;
+		}
+		cnt31++;
 	}
-	else if (cnt31 == 1)
-	{
-		v0 = System::Convert::ToDouble(textBox31->Text);
-		label116->Text = "source speed ";
-	}
-	else if (cnt31 == 2)
-	{
-		vs = System::Convert::ToDouble(textBox31->Text);
-		label116->Text = "Observer speed";
-	}
-	else if (cnt31 == 3)
-	{
-		vl = System::Convert::ToDouble(textBox31->Text);
-		label116->Text = "frequency";
-		label117->Text = System::Convert::ToString((float)(f * ((v0 + vl) / (v0 + vs)))) + " Hz";
-		cnt31 = -1;
-	}
-	cnt31++;
 }
 	   public: int cnt32 = 0;
 private: System::Void button38_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (cnt32 == 0)
+	if (isEmpty(textBox32))
+		label120->Text = "enter an input";
+	else
 	{
-		A = System::Convert::ToDouble(textBox32->Text);
-		label119->Text = "k";
-		label120->Text = ""; 
+		if (cnt32 == 0)
+		{
+			A = System::Convert::ToDouble(textBox32->Text);
+			label119->Text = "k";
+			label120->Text = "";
+		}
+		else if (cnt32 == 1)
+		{
+			k = System::Convert::ToDouble(textBox32->Text);
+			label119->Text = "w";
+		}
+		else if (cnt32 == 2)
+		{
+			w = System::Convert::ToDouble(textBox32->Text);
+			label119->Text = "Q";
+		}
+		else if (cnt32 == 3)
+		{
+			Q = System::Convert::ToDouble(textBox32->Text);
+			label119->Text = "A";
+			label120->Text = "y = " + System::Convert::ToString(2 * A) +
+				" cos (" + System::Convert::ToString(Q / 2) + ") sin (   " + System::Convert::ToString(k) + " x - " +
+				System::Convert::ToString(w) + " t +  " + System::Convert::ToString(Q / 2) + ")";
+			cnt32 = -1;
+		}
+		cnt32++;
 	}
-	else if (cnt32 == 1)
-	{
-		k = System::Convert::ToDouble(textBox32->Text);
-		label119->Text = "w";
-	} 
-	else if (cnt32 == 2)
-	{
-		w = System::Convert::ToDouble(textBox32->Text);
-		label119->Text = "Q";
-	}
-	else if (cnt32 == 3)
-	{
-		Q = System::Convert::ToDouble(textBox32->Text);
-		label119->Text = "A"; 
-		label120->Text ="y = "+ System::Convert::ToString(2 * A) +
-			" cos (" + System::Convert::ToString(Q/2) + ") sin (   " + System::Convert::ToString(k) + " x - "+
-			System::Convert::ToString(w) + " t +  " + System::Convert::ToString(Q / 2) + ")";
-		cnt32= -1;
-	}
-	cnt32++;
 
 }
 	   public: int cnt33 = 0;
 private: System::Void button39_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (cnt33 == 0)
+	if (isEmpty(textBox33))
+		label124->Text = "enter an input";
+	else
 	{
-		A = System::Convert::ToDouble(textBox33->Text);
-		label123->Text = "k";
-		label124->Text = "";
+		if (cnt33 == 0)
+		{
+			A = System::Convert::ToDouble(textBox33->Text);
+			label123->Text = "k";
+			label124->Text = "";
+		}
+		else if (cnt33 == 1)
+		{
+			k = System::Convert::ToDouble(textBox33->Text);
+			label123->Text = "w";
+		}
+		else if (cnt33 == 2)
+		{
+			w = System::Convert::ToDouble(textBox33->Text);
+			label123->Text = "A";
+			label124->Text = "y = " + System::Convert::ToString(2 * A) +
+				" sin (   " + System::Convert::ToString(k) + " x ) cos (" +
+				System::Convert::ToString(w) + " t )";
+			cnt33 = -1;
+		}
+		cnt33++;
 	}
-	else if (cnt33 == 1)
-	{
-		k = System::Convert::ToDouble(textBox33->Text);
-		label123->Text = "w";
-	} 
-	else if (cnt33 == 2)
-	{
-		w = System::Convert::ToDouble(textBox33->Text);
-		label123->Text = "A";
-		label124->Text ="y = "+ System::Convert::ToString(2 * A) +
-			 " sin (   " + System::Convert::ToString(k) + " x ) cos (" + 
-			System::Convert::ToString(w) + " t )";
-		cnt33 = -1;
-	}
-	cnt33++;
 
 }
 private: System::Void label128_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 	   public:float cnt34 = 0, n = 0;
 private: System::Void button40_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (cnt34 == 0)
+	if (isEmpty(textBox34))
+		label128->Text = "enter an input";
+	else
 	{
-		y = System::Convert::ToDouble(textBox34->Text);
-		label127->Text = "n";
-		label128->Text = "";
-		panel18->Hide();
-	} 
-	else if (cnt34 == 1)
-	{
-		n = System::Convert::ToDouble(textBox34->Text);
-		panel18->Show();
-		label128->Text = System::Convert::ToString((float)((n*y)/2));
-		cnt34 = -1;
+		if (cnt34 == 0)
+		{
+			y = System::Convert::ToDouble(textBox34->Text);
+			label127->Text = "n";
+			label128->Text = "";
+			panel18->Hide();
+		}
+		else if (cnt34 == 1)
+		{
+			n = System::Convert::ToDouble(textBox34->Text);
+			panel18->Show();
+			label128->Text = System::Convert::ToString((float)((n * y) / 2));
+			cnt34 = -1;
+		}
+		cnt34++;
 	}
-	cnt34++;
 }
 	   public: int cnt35 = 0;
 private: System::Void button41_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (cnt35 == 0)
+	if (isEmpty(textBox35))
+		label130->Text = "enter an input";
+	else
 	{
-		y = System::Convert::ToDouble(textBox35->Text);
-		label129->Text = "n";
-		label130->Text = "";
-		panel19->Hide();
+		if (cnt35 == 0)
+		{
+			y = System::Convert::ToDouble(textBox35->Text);
+			label129->Text = "n";
+			label130->Text = "";
+			panel19->Hide();
+		}
+		else if (cnt35 == 1)
+		{
+			n = System::Convert::ToDouble(textBox35->Text);
+			panel19->Show();
+			label130->Text = System::Convert::ToString((float)((n * y) / 4));
+			cnt35 = -1;
+		}
+		cnt35++;
 	}
-	else if (cnt35 == 1)
-	{
-		n = System::Convert::ToDouble(textBox35->Text);
-		panel19->Show();
-		label130->Text = System::Convert::ToString((float)((n * y) / 4));
-		cnt35 = -1;
-	}
-	cnt35++;
 
 
 }
 	   public: int cnt36 = 0;
 private: System::Void button42_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (cnt36 == 0)
+	if (isEmpty(textBox36))
+		label134->Text = "enter an input";
+	else
 	{
-		l = System::Convert::ToDouble(textBox36->Text);
-		label133->Text = "n";
-		label134->Text = ""; 
+		if (cnt36 == 0)
+		{
+			l = System::Convert::ToDouble(textBox36->Text);
+			label133->Text = "n";
+			label134->Text = "";
+		}
+		else if (cnt36 == 1)
+		{
+			n = System::Convert::ToDouble(textBox36->Text);
+			label133->Text = "L";
+			if (n == 0)
+				label134->Text = "enter valid input";
+			else
+			label134->Text = System::Convert::ToString((float)((2 * l) / n)) + " m";
+			cnt36 = -1;
+		}
+		cnt36++;
 	}
-	else if (cnt36 == 1)
-	{
-		n = System::Convert::ToDouble(textBox36->Text);
-		label133->Text = "L";
-		label134->Text = System::Convert::ToString((float)((2*l)/n))+" m";
-		cnt36 = -1;
-	}
-	cnt36++;
 
 }
 	   public: int cnt37 = 0;
 private: System::Void button43_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (cnt37 == 0)
+	if (isEmpty(textBox37))
+		label137->Text = "enter an input";
+	else
 	{
-		n = System::Convert::ToDouble(textBox37->Text);
-		label136->Text = "v";
-		label137->Text = "";
+		if (cnt37 == 0)
+		{
+			n = System::Convert::ToDouble(textBox37->Text);
+			label136->Text = "v";
+			label137->Text = "";
+		}
+		else if (cnt37 == 1)
+		{
+			v = System::Convert::ToDouble(textBox37->Text);
+			label136->Text = "l";
+		}
+		else if (cnt37 == 2)
+		{
+			l = System::Convert::ToDouble(textBox37->Text);
+			label136->Text = "n";
+			if (l == 0)
+				label137->Text = "enter a valid input";
+			else
+			label137->Text = System::Convert::ToString((float)((n * v) / (2 * l))) + " Hz";
+			cnt37 = -1;
+		}
+		cnt37++;
 	}
-	else if (cnt37 == 1)
-	{
-		v = System::Convert::ToDouble(textBox37->Text);
-		label136->Text = "l"; 
-	}
-	else if (cnt37 == 2)
-	{
-		l = System::Convert::ToDouble(textBox37->Text);
-		label136->Text = "n";
-		label137->Text = System::Convert::ToString((float)((n*v)/(2 * l)))+" Hz";
-		cnt37 = -1;
-	}
-	cnt37++;
 
 }
 	   public: float cnt38 = 0, d = 0;
 private: System::Void button44_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (cnt38 == 0)
+	if (isEmpty(textBox38))
+		label140->Text = "enter an input";
+	else
 	{
-		Q = System::Convert::ToDouble(textBox38->Text);
-		label138->Text = "d";
-		label140->Text = "";
-		panel21->Hide();
-	} 
-	else if (cnt38 == 1)
-	{
-		d = System::Convert::ToDouble(textBox38->Text);
-		panel21->Show();
-		label140->Text = System::Convert::ToString((float)(d*sin(Q * 3.14159 / 180))) + " m";
-		cnt38 = -1;
+		if (cnt38 == 0)
+		{
+			Q = System::Convert::ToDouble(textBox38->Text);
+			label138->Text = "d";
+			label140->Text = "";
+			panel21->Hide();
+		}
+		else if (cnt38 == 1)
+		{
+			d = System::Convert::ToDouble(textBox38->Text);
+			panel21->Show();
+			label140->Text = System::Convert::ToString((float)(d * sin(Q * 3.14159 / 180))) + " m";
+			cnt38 = -1;
+		}
+		cnt38++;
 	}
-	cnt38++;
 
 }
 	   public: int cnt39 = 0;
 private: System::Void button45_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (cnt39 == 0)
+	if (isEmpty(textBox39))
+		label143->Text = "enter an input";
+	else
 	{
-		y = System::Convert::ToDouble(textBox39->Text);
-		label142->Text = "m";
-		label143->Text = "";
-		panel22->Hide();
+		if (cnt39 == 0)
+		{
+			y = System::Convert::ToDouble(textBox39->Text);
+			label142->Text = "m";
+			label143->Text = "";
+			panel22->Hide();
+		}
+		else if (cnt39 == 1)
+		{
+			m = System::Convert::ToDouble(textBox39->Text);
+			panel22->Show();
+			label143->Text = System::Convert::ToString((float)(m * y)) + " m";
+			cnt39 = -1;
+		}
+		cnt39++;
 	}
-	else if (cnt39 == 1)
-	{
-		m = System::Convert::ToDouble(textBox39->Text);
-		panel22->Show();
-		label143->Text = System::Convert::ToString((float)(m * y)) + " m";
-		cnt39 = -1;
-	}
-	cnt39++;
 
 }
 	   public: int cnt40 = 0;
 private: System::Void button46_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (cnt40 == 0)
+	if (isEmpty(textBox40))
+		label146->Text = "enter an input";
+	else
 	{
-		y = System::Convert::ToDouble(textBox40->Text);
-		label145->Text = "m";
-		label146->Text = "";
-		panel24->Hide();
+		if (cnt40 == 0)
+		{
+			y = System::Convert::ToDouble(textBox40->Text);
+			label145->Text = "m";
+			label146->Text = "";
+			panel24->Hide();
+		}
+		else if (cnt40 == 1)
+		{
+			m = System::Convert::ToDouble(textBox40->Text);
+			panel24->Show();
+			label146->Text = System::Convert::ToString((float)((m + .5) * y)) + " m";
+			cnt40 = -1;
+		}
+		cnt40++;
 	}
-	else if (cnt40 == 1)
-	{
-		m = System::Convert::ToDouble(textBox40->Text);
-		panel24->Show();
-		label146->Text = System::Convert::ToString((float)((m+.5) * y)) + " m";
-		cnt40 = -1;
-	}
-	cnt40++;
 }
 	   public: int cnt41 = 0;
 private: System::Void button47_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (cnt41 == 0)
+	if (isEmpty(textBox41))
+		label149->Text = "enter an input";
+	else
 	{
-		Q = System::Convert::ToDouble(textBox41->Text);
-		label148->Text = "L";
-		label149->Text = "";
-		panel23->Hide();
+		if (cnt41 == 0)
+		{
+			Q = System::Convert::ToDouble(textBox41->Text);
+			label148->Text = "L";
+			label149->Text = "";
+			panel23->Hide();
+		}
+		else if (cnt41 == 1)
+		{
+			l = System::Convert::ToDouble(textBox41->Text);
+			panel23->Show();
+			label149->Text = System::Convert::ToString((float)(l * tan(Q * 3.14159 / 180))) + " m";
+			cnt41 = -1;
+		}
+		cnt41++;
 	}
-	else if (cnt41 == 1)
-	{
-		l = System::Convert::ToDouble(textBox41->Text);
-		panel23->Show();
-		label149->Text = System::Convert::ToString((float)(l * tan(Q * 3.14159 / 180))) + " m";
-		cnt41 = -1;
-	}
-	cnt41++;
 
 }
 	   public: int cnt42 = 0;
 private: System::Void button48_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (cnt42 == 0)
+	if (isEmpty(textBox42))
+		label152->Text = "enter an input";
+	else
 	{
-		y = System::Convert::ToDouble(textBox42->Text);
-		label151->Text = "m";
-		label152->Text = "";
-		panel25->Hide();
+		if (cnt42 == 0)
+		{
+			y = System::Convert::ToDouble(textBox42->Text);
+			label151->Text = "m";
+			label152->Text = "";
+			panel25->Hide();
+		}
+		else if (cnt42 == 1)
+		{
+			m = System::Convert::ToDouble(textBox42->Text);
+			label151->Text = "L";
+			panel25->Hide();
+		}
+		else if (cnt42 == 2)
+		{
+			l = System::Convert::ToDouble(textBox42->Text);
+			label151->Text = "d";
+			panel25->Hide();
+		}
+		else if (cnt42 == 3)
+		{
+			d = System::Convert::ToDouble(textBox42->Text);
+			panel25->Show();
+			if (d == 0)
+				label152->Text = "enter a valid input";
+			else
+			label152->Text = System::Convert::ToString((float)((l * m * y) / d)) + " m";
+			cnt42 = -1;
+		}
+		cnt42++;
 	}
-	else if (cnt42 == 1)
-	{
-		m = System::Convert::ToDouble(textBox42->Text);
-		label151->Text = "L"; 
-		panel25->Hide();
-	}
-	else if (cnt42 == 2)
-	{
-		l = System::Convert::ToDouble(textBox42->Text);
-		label151->Text = "d"; 
-		panel25->Hide();
-	}
-	else if (cnt42 == 3)
-	{
-		d = System::Convert::ToDouble(textBox42->Text);
-		panel25->Show();
-		label152->Text = System::Convert::ToString((float)((l*m*y)/d)) + " m";
-		cnt42 = -1;
-	}
-	cnt42++;
 
 }
 	   public:int cnt43 = 0;
 private: System::Void button49_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (cnt43 == 0)
+	if (isEmpty(textBox43))
+		label155->Text = "enter an input";
+	else
 	{
-		y = System::Convert::ToDouble(textBox43->Text);
-		label54->Text = "m";
-		label155->Text = "";
-		panel26->Hide();
+		if (cnt43 == 0)
+		{
+			y = System::Convert::ToDouble(textBox43->Text);
+			label54->Text = "m";
+			label155->Text = "";
+			panel26->Hide();
+		}
+		else if (cnt43 == 1)
+		{
+			m = System::Convert::ToDouble(textBox43->Text);
+			label154->Text = "L";
+			panel26->Hide();
+		}
+		else if (cnt43 == 2)
+		{
+			l = System::Convert::ToDouble(textBox43->Text);
+			label154->Text = "d";
+			panel26->Hide();
+		}
+		else if (cnt43 == 3)
+		{
+			d = System::Convert::ToDouble(textBox43->Text);
+			panel26->Show();
+			if (d == 0)
+				label155->Text = "enter a valid input";
+			else
+			label155->Text = System::Convert::ToString((float)((l * (m + .5) * y) / d)) + " m";
+			cnt43 = -1;
+		}
+		cnt43++;
 	}
-	else if (cnt43 == 1)
-	{
-		m = System::Convert::ToDouble(textBox43->Text);
-		label154->Text = "L";
-		panel26->Hide();
-	}
-	else if (cnt43 == 2)
-	{
-		l = System::Convert::ToDouble(textBox43->Text);
-		label154->Text = "d";
-		panel26->Hide();
-	}
-	else if (cnt43 == 3)
-	{
-		d = System::Convert::ToDouble(textBox43->Text);
-		panel26->Show();
-		label155->Text = System::Convert::ToString((float)((l * (m+.5) * y) / d) )+ " m";
-		cnt43 = -1;
-	}
-	cnt43++;
 }
 	   public: int cnt44 = 0;
 private: System::Void button50_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (cnt44 == 0)
+	if (isEmpty(textBox44))
+		label157->Text = "enter an input";
+	else
 	{
-		y = System::Convert::ToDouble(textBox44->Text); 
-		panel20->Show();
-		panel27->Hide();
+		if (cnt44 == 0)
+		{
+			y = System::Convert::ToDouble(textBox44->Text);
+			panel20->Show();
+			panel27->Hide();
+		}
+		else if (cnt44 == 1)
+		{
+			Q = System::Convert::ToDouble(textBox44->Text);
+			panel20->Hide();
+			panel27->Show();
+			if (y == 0)
+				label157->Text = "enter a valid input";
+			else
+			label157->Text = System::Convert::ToString((float)((360 * Q) / y));
+			cnt44 = -1;
+		}
+		cnt44++;
 	}
-	else if (cnt44 == 1)
-	{
-		Q = System::Convert::ToDouble(textBox44->Text); 
-		panel20->Hide();
-		panel27->Show();
-		label157->Text = System::Convert::ToString((float)((360 * Q) / y));
-		cnt44 = -1;
-	}
-	cnt44++;
-
 }
 	   public: float cnt45 = 0, y2 = 0;
 private: System::Void button51_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (cnt45 == 0)
+	if (isEmpty(textBox45))
+		label160->Text = "enter an input";
+	else
 	{
-		y = System::Convert::ToDouble(textBox45->Text);
-		label159->Text = "y";
-		label160->Text = "";
-		panel28->Hide();
+		if (cnt45 == 0)
+		{
+			y = System::Convert::ToDouble(textBox45->Text);
+			label159->Text = "y";
+			label160->Text = "";
+			panel28->Hide();
+		}
+		else if (cnt45 == 1)
+		{
+			y2 = System::Convert::ToDouble(textBox45->Text);
+			label159->Text = "d";
+			panel28->Hide();
+		}
+		else if (cnt45 == 2)
+		{
+			d = System::Convert::ToDouble(textBox45->Text);
+			label159->Text = "L";
+			panel28->Hide();
+		}
+		else if (cnt45 == 3)
+		{
+			l = System::Convert::ToDouble(textBox45->Text);
+			label159->Text = "I max";
+			panel28->Hide();
+		}
+		else if (cnt45 == 4)
+		{
+			I = System::Convert::ToDouble(textBox45->Text);
+			panel28->Show();
+			if ((y * l) == 0)
+				label160->Text = "enter a valid input";
+			else
+			label160->Text = System::Convert::ToString((float)(I * pow(cos(((180 * d * y2) / (y * l)) * 3.14159 / 180), 2)));
+			label159->Text = "";
+			cnt45 = -1;
+		}
+		cnt45++;
 	}
-	else if (cnt45 == 1)
-	{ 
-		y2 = System::Convert::ToDouble(textBox45->Text);
-		label159->Text = "d";
-		panel28->Hide();
-	}
-	else if (cnt45 == 2)
-	{
-		d = System::Convert::ToDouble(textBox45->Text);
-		label159->Text = "L";
-		panel28->Hide();
-	}
-	else if (cnt45 == 3)
-	{
-		l = System::Convert::ToDouble(textBox45->Text);
-		label159->Text = "I max";
-		panel28->Hide();
-	}
-	else if (cnt45 == 4)
-	{
-		I = System::Convert::ToDouble(textBox45->Text);
-		panel28->Show();
-		label160->Text = System::Convert::ToString((float)(I*pow( cos(((180*d*y2)/(y*l)) *3.14159 /180),2))) ;
-		label159->Text = "";
-		cnt45 = -1;
-	}
-	cnt45++;
 
 }
 	    
 private: System::Void button52_Click(System::Object^ sender, System::EventArgs^ e) {
-	n = System::Convert::ToDouble(textBox46->Text);
-	label163->Text = System::Convert::ToString((float)((3*pow(10,8)) / n));
+	if (isEmpty(textBox46))
+		label163->Text = "enter an input";
+	else
+	{
+		n = System::Convert::ToDouble(textBox46->Text);
+		if (n == 0)
+			label163->Text = "enter a valid input";
+		else
+		label163->Text = System::Convert::ToString((float)((3 * pow(10, 8)) / n));
+	}
 	 
 	 
 }
 	   public: int cnt47 = 0;
 private: System::Void button53_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (cnt47 == 0)
+	if (isEmpty(textBox47))
+		label166->Text = "enter an input";
+	else
 	{
-		y = System::Convert::ToDouble(textBox47->Text);
-		label165->Text = "n";
-		panel29->Hide();
-		label166->Text = "";
+		if (cnt47 == 0)
+		{
+			y = System::Convert::ToDouble(textBox47->Text);
+			label165->Text = "n";
+			panel29->Hide();
+			label166->Text = "";
+		}
+		else if (cnt47 == 1)
+		{
+			n = System::Convert::ToDouble(textBox47->Text);
+			panel29->Show();
+			if (n == 0)
+				label166->Text = "enter a valid input";
+			else
+			label166->Text = System::Convert::ToString((float)(y / n)) + " m";
+			cnt47 = -1;
+		}
+		cnt47++;
 	}
-	else if (cnt47 == 1)
-	{
-		n = System::Convert::ToDouble(textBox47->Text);
-		panel29->Show(); 
-		label166->Text = System::Convert::ToString((float)(y / n))+" m";
-		cnt47 = -1;
-	}
-	cnt47++;
 
 }
 private: System::Void label65_Click(System::Object^ sender, System::EventArgs^ e) {

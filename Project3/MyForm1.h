@@ -6,21 +6,34 @@
 #include "LogicDesign.h" 
 #include <vector> 
 
+bool isEmpty(System::Windows::Forms::TextBox^ x);
+
+/*bool checkbinary(std::string s);
+bool checkoctal(std::string s);
+bool checkhex(std::string s);
+bool checkdecimal(std::string s); 
+
+std::string convertDecimalToHexDecimal(long long integer_part, double fractional_part);
+std::string convertDecimalToBinary(long long integer_part, double fractional_part);
+std::string convertDecimalToOctal(long long integer_part, double fractional_part);
+std::string convertDecimalToBinary(double number);
+std::string convertDecimalToHexDecimal(double number);
+std::string convertDecimalToOctal(double number);*/
 /*double convertBinaryToDecimal(std::string number);
 std::string convertDecimalToBinary(double number);
 double convertOctalToDecimal(std::string number);
 std::string convertDecimalToOctal(double number);
 double convertHexDecimalToDecimal(std::string number);
 std::string convertDecimalToHexDecimal(double number);
-std::string getFunctionFromTruthTable(std::string output); 
+std::string getFunctionFromTruthTable(std::string output);
 std::string getMaxTermFunctionFromTruthTable(string output);*/
 
 /*bool check(std::string s);
-std::string repNum(int pos, int n, std::string s); 
+std::string repNum(int pos, int n, std::string s);
 std::string replaceAsterisk(std::string s);
 std::string replacePlus(std::string s);*/
 
- 
+
 
 namespace Project3 {
 
@@ -31,8 +44,8 @@ namespace Project3 {
 	using namespace System::Data;
 	using namespace System::Drawing;
 	using namespace System::Diagnostics;
-	 
-	
+
+
 
 	/// <summary>
 	/// Summary for MyForm1
@@ -141,7 +154,7 @@ namespace Project3 {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -984,250 +997,451 @@ namespace Project3 {
 
 		}
 #pragma endregion
-		
+
 	private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void label6_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {  
-}
-	  /////////////////////binary to decimal //////////////////
-private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-	char cStr[50] = { 0 };
-	String^ clrString = textBox2->Text;
-	if (clrString->Length < sizeof(cStr))
-		sprintf(cStr, "%s", clrString);
-	std::string number(cStr); 
-	 double result= convertBinaryToDecimal( number); 
-	label10->Text = System::Convert::ToString(result);
-}
-	  //////////////////////////binary to hexa///////////////////////////
-private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-	char cStr[50] = { 0 };
-	String^ clrString = textBox3->Text;
-	if (clrString->Length < sizeof(cStr))
-		sprintf(cStr, "%s", clrString);
-	std::string str(cStr); 
-	double temp= convertBinaryToDecimal(str); 
-	std::string ans = convertDecimalToHexDecimal(temp);
-	String^ str2 = gcnew String(ans.c_str());
-	label11->Text = str2;
-		 
-} 
-
-private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void label11_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-////////////////////////binary to octal/////////////////////////// 
-private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) { 
-	char cStr[50] = { 0 };
-	String^ clrString = textBox1->Text;
-	if (clrString->Length < sizeof(cStr))
-		sprintf(cStr, "%s", clrString);
-	std::string str(cStr); 
-	double temp = convertBinaryToDecimal(str);
-	std::string ans = convertDecimalToOctal(temp); 
-	String^ str2 = gcnew String(ans.c_str());
-	label12->Text = str2;
-}
- ////////////////////////octal to binary///////////////////////
-private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e) { 
-	char cStr[50] = { 0 };
-	String^ clrString = textBox4->Text;
-	if (clrString->Length < sizeof(cStr))
-		sprintf(cStr, "%s", clrString);
-	std::string str(cStr);
-	double temp = convertOctalToDecimal(str);
-	std::string ans = convertDecimalToBinary(temp);  
-	String^ str2 = gcnew String(ans.c_str());
-	label13->Text = str2;
-	 
-}
- ///////////////////////////decimal to binary//////////////////////
-private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
-	double number = System::Convert::ToDouble(textBox5->Text);  
-	std::string result= convertDecimalToBinary( number);
-	String^ str2 = gcnew String(result.c_str());
-	label14->Text = str2;
- 
-}
-  //////////////////////decimal to octal////////////////////////
-private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
-	double number = System::Convert::ToDouble(textBox6->Text);
-	std::string result = convertDecimalToOctal(number);
-	String^ str2 = gcnew String(result.c_str());
-	label15->Text = str2;
-}
- 	    ////////////////////////////// octal to decimal /////////////////////
-private: System::Void button10_Click(System::Object^ sender, System::EventArgs^ e) { 
-	char cStr[50] = { 0 };
-	String^ clrString = textBox7->Text;
-	if (clrString->Length < sizeof(cStr))
-		sprintf(cStr, "%s", clrString);
-	std::string number(cStr); 
-	double result =  convertOctalToDecimal(number); 
-	label16->Text = System::Convert::ToString(result);
-
-}
-private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void label7_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void label25_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void label8_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-////////////////////////////////hexa to binary////////////////////
-private: System::Void button12_Click(System::Object^ sender, System::EventArgs^ e) {
-	char cStr[50] = { 0 };
-	String^ clrString = textBox9->Text;
-	if (clrString->Length < sizeof(cStr))
-		sprintf(cStr, "%s", clrString);
-	std::string str(cStr);
-	double temp = convertHexDecimalToDecimal(str);
-	std::string ans = convertDecimalToBinary(temp);
-	String^ str2 = gcnew String(ans.c_str());
-	label23->Text = str2;
-}
-/////////////////////////octal to hexa///////////////////////////
-private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e) {
-	char cStr[50] = { 0 };
-	String^ clrString = textBox10->Text;
-	if (clrString->Length < sizeof(cStr))
-		sprintf(cStr, "%s", clrString);
-	std::string str(cStr);
-	double temp = convertOctalToDecimal(str);
-	std::string ans = convertDecimalToHexDecimal(temp);
-	String^ str2 = gcnew String(ans.c_str());
-	label9->Text = str2;
-	 
-
-}
-////////////////////////////////decimal to hexa///////////////////////
-private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
-	double number = System::Convert::ToDouble(textBox11->Text);
-	std::string result = convertDecimalToHexDecimal(number);
-	String^ str2 = gcnew String(result.c_str());
-	label7->Text = str2;
-}
-////////////////////////////////hexa to octal//////////////////////////
-private: System::Void button13_Click(System::Object^ sender, System::EventArgs^ e) {
-	char cStr[50] = { 0 };
-	String^ clrString = textBox12->Text;
-	if (clrString->Length < sizeof(cStr))
-		sprintf(cStr, "%s", clrString);
-	std::string str(cStr);
-	double temp = convertHexDecimalToDecimal(str);
-	std::string ans = convertDecimalToOctal(temp);
-	String^ str2 = gcnew String(ans.c_str());
-	label25->Text = str2;
-}
-private: System::Void tableLayoutPanel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-}
-	  /////////////////////function from truth table//////////////
-private: System::Void button14_Click(System::Object^ sender, System::EventArgs^ e) {
-	char cStr[50] = { 0 };
-	String^ clrString = textBox14->Text;
-	if (clrString->Length < sizeof(cStr))
-		sprintf(cStr, "%s", clrString);
-	std::string number(cStr);
-		std::string str = getFunctionFromTruthTable(number);
-		std::string str3= getMaxTermFunctionFromTruthTable(number);
-		String^ str2 = gcnew String(str.c_str());
-		String^ str4 = gcnew String(str3.c_str());
-		label26->Text = str2;
-		label28->Text = str4;
-	 
-} 
-	   ////////////////////////hexa to decimal////////////////////////
-private: System::Void button11_Click(System::Object^ sender, System::EventArgs^ e) {
-	char cStr[50] = { 0 };
-	String^ clrString = textBox8->Text;
-	if (clrString->Length < sizeof(cStr))
-		sprintf(cStr, "%s", clrString);
-	std::string number(cStr);
-	double result = convertHexDecimalToDecimal(number);
-	label18->Text = System::Convert::ToString(result); 
-}
-private: System::Void label26_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
-	this->Hide();
-	otherform->Show();
-}
-private: System::Void textBox14_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void button15_Click(System::Object^ sender, System::EventArgs^ e) {
-	std::string s1="", s2="", s3="";
-	bool mar = false;
-	char cStr[100] = {0};
-	String^ clrString = textBox13->Text;
-	if (clrString->Length < sizeof(cStr))
-		sprintf(cStr, "%s", clrString);
-	std::string s(cStr); 
-	if (!check(s)) {
-		label31->Text= "enter a valid equation";   
+	private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-	else
-	{  
-		for (char i : s) { 
-			if (i == '+' || i == '*')
-				mar = true; 
+	private: System::Void label6_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+		   /////////////////////binary to decimal //////////////////
+	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+		char cStr[50] = { 0 };
+		if (isEmpty(textBox2))
+			label10->Text = "enter an input";
+		else
+		{
+			String^ clrString = textBox2->Text;
+			if (clrString->Length < sizeof(cStr))
+				sprintf(cStr, "%s", clrString);
+			std::string number(cStr);
+			if (!checkbinary(number))
+				label10->Text = "enter a valid input";
+			else
+			{
+				double result = convertBinaryToDecimal(number);
+				label10->Text = System::Convert::ToString(result);
+			}
 		}
-		std::string zero = "0", one = "1";
-		bool first = true;
-		int last = 0;
-		for (int i = 0; i < s.length(); ++i) {
-			if ((s[i] == '+' || s[i] == '*')) {
-				last = i;
-				if (first) {
-					s=repNum(0, i, s);
-					first = false;
-					i = 0;
-					continue;
+	}
+		   //////////////////////////binary to hexa///////////////////////////
+	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (isEmpty(textBox3))
+			label11->Text = "enter an input";
+		else
+		{
+			char cStr[50] = { 0 };
+			String^ clrString = textBox3->Text;
+			if (clrString->Length < sizeof(cStr))
+				sprintf(cStr, "%s", clrString);
+			std::string str(cStr);
+			if (!checkbinary(str))
+				label11->Text = "enter a valid input";
+			else
+			{
+				double temp = convertBinaryToDecimal(str);
+				std::string ans = convertDecimalToHexDecimal(temp);
+				String^ str2 = gcnew String(ans.c_str());
+				label11->Text = str2;
+			}
+		}
+
+	}
+
+	private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void label11_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+		   ////////////////////////binary to octal/////////////////////////// 
+	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (isEmpty(textBox1))
+			label12->Text = "enter an input";
+		else
+		{
+			char cStr[50] = { 0 };
+			String^ clrString = textBox1->Text;
+			if (clrString->Length < sizeof(cStr))
+				sprintf(cStr, "%s", clrString);
+			std::string str(cStr);
+			if (!checkbinary(str))
+				label12->Text = "enter a valid input";
+			else
+			{
+				double temp = convertBinaryToDecimal(str);
+				std::string ans = convertDecimalToOctal(temp);
+				String^ str2 = gcnew String(ans.c_str());
+				label12->Text = str2;
+			}
+		}
+	}
+		   ////////////////////////octal to binary///////////////////////
+	private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (isEmpty(textBox4))
+			label13->Text = "enter an input";
+		else
+		{
+			char cStr[50] = { 0 };
+			String^ clrString = textBox4->Text;
+			if (clrString->Length < sizeof(cStr))
+				sprintf(cStr, "%s", clrString);
+			std::string str(cStr);
+			if (!checkoctal(str))
+				label13->Text = "enter a valid input";
+			else
+			{
+				double temp = convertOctalToDecimal(str);
+				std::string ans = convertDecimalToBinary(temp);
+				String^ str2 = gcnew String(ans.c_str());
+				label13->Text = str2;
+			}
+		}
+
+	}
+		   ///////////////////////////decimal to binary//////////////////////
+	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (isEmpty(textBox5))
+			label14->Text = "enter an input";
+		else
+		{
+			char cStr[50] = { 0 };
+			String^ clrString = textBox5->Text;
+			if (clrString->Length < sizeof(cStr))
+				sprintf(cStr, "%s", clrString);
+			std::string s(cStr);
+			if (!checkdecimal(s))
+				label14->Text = "enter a valid input";
+			else
+			{
+				std::string result;
+				long long integerpart = 0;
+				double fracpart = 0;
+				int in = s.find('.');
+				if (in != -1)
+				{
+					integerpart = stoll(s.substr(0, in));
+					fracpart = stod(s.substr(in, s.size() - in - 1));
+					result = convertDecimalToBinary(integerpart, fracpart);
 				}
-				for (int j = i + 1; j < s.length(); ++j) {
-					if ((s[j] == '+' || s[j] == '*')) {
-						s=repNum(i + 1, j - i - 1, s);
-						break;
+				else
+				{
+					integerpart = stoll(s);
+					result = convertDecimalToBinary(integerpart, fracpart);
+				}
+
+				String^ str2 = gcnew String(result.c_str());
+				label14->Text = str2;
+			}
+		} 
+
+	}
+		   //////////////////////decimal to octal////////////////////////
+	private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (isEmpty(textBox6))
+			label15->Text = "enter an input";
+		else
+		{
+			char cStr[50] = { 0 };
+			String^ clrString = textBox6->Text;
+			if (clrString->Length < sizeof(cStr))
+				sprintf(cStr, "%s", clrString);
+			std::string s(cStr);
+			if (!checkdecimal(s))
+				label15->Text = "enter a valid input";
+			else
+			{
+				std::string result;
+				long long integerpart = 0;
+				double fracpart = 0;
+				int in = s.find('.');
+				if (in != -1)
+				{
+					integerpart = stoll(s.substr(0, in));
+					fracpart = stod(s.substr(in, s.size() - in - 1));
+					result = convertDecimalToOctal(integerpart, fracpart);
+				}
+				else
+				{
+					integerpart = stoll(s);
+					result = convertDecimalToOctal(integerpart, fracpart);
+				}
+
+				String^ str2 = gcnew String(result.c_str());
+				label15->Text = str2;
+			}
+		}
+ 
+	}
+		   ////////////////////////////// octal to decimal /////////////////////
+	private: System::Void button10_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (isEmpty(textBox7))
+			label16->Text = "enter an input";
+		else
+		{
+			char cStr[50] = { 0 };
+			String^ clrString = textBox7->Text;
+			if (clrString->Length < sizeof(cStr))
+				sprintf(cStr, "%s", clrString);
+			std::string number(cStr);
+			if (!checkoctal(number))
+				label16->Text = "enter a valid input";
+			else
+			{
+				double result = convertOctalToDecimal(number);
+				label16->Text = System::Convert::ToString(result);
+			}
+		}
+
+	}
+	private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void label7_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void label25_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void label8_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+		   ////////////////////////////////hexa to binary////////////////////
+	private: System::Void button12_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (isEmpty(textBox9))
+			label23->Text = "enter an input";
+		else
+		{
+			char cStr[50] = { 0 };
+			String^ clrString = textBox9->Text;
+			if (clrString->Length < sizeof(cStr))
+				sprintf(cStr, "%s", clrString);
+			std::string str(cStr);
+			if (!checkhex(str))
+				label23->Text = "enter a valid input";
+			else
+			{
+				double temp = convertHexDecimalToDecimal(str);
+				std::string ans = convertDecimalToBinary(temp);
+				String^ str2 = gcnew String(ans.c_str());
+				label23->Text = str2;
+			}
+		}
+	}
+		   /////////////////////////octal to hexa///////////////////////////
+	private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (isEmpty(textBox10))
+			label9->Text = "enter an input";
+		else
+		{
+			char cStr[50] = { 0 };
+			String^ clrString = textBox10->Text;
+			if (clrString->Length < sizeof(cStr))
+				sprintf(cStr, "%s", clrString);
+			std::string str(cStr);
+			if (!checkoctal(str))
+				label9->Text = "enter a valid input";
+			else
+			{
+				double temp = convertOctalToDecimal(str);
+				std::string ans = convertDecimalToHexDecimal(temp);
+				String^ str2 = gcnew String(ans.c_str());
+				label9->Text = str2;
+			}
+		}
+
+
+	}
+		   ////////////////////////////////decimal to hexa///////////////////////
+	private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (isEmpty(textBox11))
+			label7->Text = "enter an input";
+		else
+		{
+			char cStr[50] = { 0 };
+			String^ clrString = textBox11->Text;
+			if (clrString->Length < sizeof(cStr))
+				sprintf(cStr, "%s", clrString);
+			std::string s(cStr); 
+			if(!checkdecimal(s))
+				label7->Text = "enter a valid input";
+			else
+			{ 
+				std::string result;
+				long long integerpart = 0;
+				double fracpart = 0;
+				int in = s.find('.');
+				if (in != -1)
+				{
+					integerpart = stoll(s.substr(0, in));
+					fracpart = stod(s.substr(in , s.size() - in - 1));
+				    result = convertDecimalToHexDecimal(integerpart,fracpart);
+				}
+				else
+				{
+					integerpart = stoll(s);
+					result = convertDecimalToHexDecimal(integerpart, fracpart);
+				}
+				
+				String^ str2 = gcnew String(result.c_str());
+				label7->Text = str2;
+			}
+		}
+	}
+		   ////////////////////////////////hexa to octal//////////////////////////
+	private: System::Void button13_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (isEmpty(textBox12))
+			label25->Text = "enter an input";
+		else
+		{
+
+			char cStr[50] = { 0 };
+			String^ clrString = textBox12->Text;
+			if (clrString->Length < sizeof(cStr))
+				sprintf(cStr, "%s", clrString);
+			std::string str(cStr);
+			if (!checkhex(str))
+				label25->Text = "enter a valid input";
+			else
+			{
+
+				double temp = convertHexDecimalToDecimal(str);
+				std::string ans = convertDecimalToOctal(temp);
+				String^ str2 = gcnew String(ans.c_str());
+				label25->Text = str2;
+			}
+		}
+	}
+	private: System::Void tableLayoutPanel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+	}
+		   /////////////////////function from truth table//////////////
+	private: System::Void button14_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (isEmpty(textBox14))
+		{
+			label26->Text = "enter the function";
+			label28->Text = "";
+		}
+		else
+		{
+			char cStr[50] = { 0 };
+			String^ clrString = textBox14->Text;
+			if (clrString->Length < sizeof(cStr))
+				sprintf(cStr, "%s", clrString);
+			std::string number(cStr);
+			if (!checkbinary(number))
+			{
+				label26->Text = "enter a valid input";
+				label28->Text = "";
+			}
+			else
+			{
+				std::string str = getFunctionFromTruthTable(number);
+				std::string str3 = getMaxTermFunctionFromTruthTable(number);
+				String^ str2 = gcnew String(str.c_str());
+				String^ str4 = gcnew String(str3.c_str());
+				label26->Text = str2;
+				label28->Text = str4;
+			}
+		}
+
+	}
+		   ////////////////////////hexa to decimal////////////////////////
+	private: System::Void button11_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (isEmpty(textBox8))
+			label18->Text = "enter an input";
+		else
+		{
+			char cStr[50] = { 0 };
+			String^ clrString = textBox8->Text;
+			if (clrString->Length < sizeof(cStr))
+				sprintf(cStr, "%s", clrString);
+			std::string number(cStr);
+			if (!checkhex(number))
+				label18->Text = "enter a valid input";
+			else
+			{
+				double result = convertHexDecimalToDecimal(number);
+				label18->Text = System::Convert::ToString(result);
+			}
+		}
+	}
+	private: System::Void label26_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
+		this->Hide();
+		otherform->Show();
+	}
+	private: System::Void textBox14_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void button15_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (isEmpty(textBox13))
+			label31->Text = "enter an input";
+		else
+		{
+			std::string s1 = "", s2 = "", s3 = "";
+			bool mar = false;
+			char cStr[100] = { 0 };
+			String^ clrString = textBox13->Text;
+			if (clrString->Length < sizeof(cStr))
+				sprintf(cStr, "%s", clrString);
+			std::string s(cStr);
+			if (!check(s)) {
+				label31->Text = "enter a valid equation";
+			}
+			else
+			{
+				for (char i : s) {
+					if (i == '+' || i == '*')
+						mar = true;
+				}
+				std::string zero = "0", one = "1";
+				bool first = true;
+				int last = 0;
+				for (int i = 0; i < s.length(); ++i) {
+					if ((s[i] == '+' || s[i] == '*')) {
+						last = i;
+						if (first) {
+							s = repNum(0, i, s);
+							first = false;
+							i = 0;
+							continue;
+						}
+						for (int j = i + 1; j < s.length(); ++j) {
+							if ((s[j] == '+' || s[j] == '*')) {
+								s = repNum(i + 1, j - i - 1, s);
+								break;
+							}
+						}
 					}
 				}
-			}
-		}
-		if (!mar) {
-			bool zer = false;
-			for (char i : s) {
-				if (i == 0) {
-					zer = true;
-					break;
+				if (!mar) {
+					bool zer = false;
+					for (char i : s) {
+						if (i == 0) {
+							zer = true;
+							break;
+						}
+					}
+					if (zer) {
+						s = "0";
+						return;
+					}
+					else {
+						s = "1";
+						return;
+					}
 				}
-			}
-			if (zer) {
-				s = "0";
-				return;
-			}
-			else {
-				s = "1";
-				return;
+				s1 = repNum(last + 1, int(s.length() - last), s);
+				s2 = replaceAsterisk(s1);
+				s3 = replacePlus(s2);
+				String^ str1 = gcnew String(s1.c_str());
+				String^ str2 = gcnew String(s2.c_str());
+				String^ str3 = gcnew String(s3.c_str());
+				label31->Text = "first simplify : " + str1 +
+					"\nSecond simplify : " + str2 +
+					"\nThird simplify : " + str3;
 			}
 		}
-		s1= repNum(last + 1, int(s.length() - last), s);
-		s2 = replaceAsterisk(s1);
-		s3 = replacePlus(s2);
-		String^ str1 = gcnew String(s1.c_str());
-		String^ str2 = gcnew String(s2.c_str());
-		String^ str3 = gcnew String(s3.c_str());
-		label31->Text= "first simplify : " + str1 +
-			"\nSecond simplify : " + str2 +
-			"\nThird simplify : " + str3;
+
+
 	}
-
-
-}
-};
+	};
 }

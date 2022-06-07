@@ -13,7 +13,72 @@ void main2(array<String^>^ args) {
 	Application::SetCompatibleTextRenderingDefault(false);
 	Project3::MyForm1 form;
 	Application::Run(% form);
-}  
+} 
+bool checkbinary(std::string s)
+{
+    int cnt = 0, cnt2 = 0;
+    for (int i = 0; i < s.size(); i++) {
+        if (s[i] == '1' || s[i] == '0' || s[i] == '.')
+            cnt++;
+        if (s[i] == '.')
+            cnt2++;
+    }
+    if (cnt2 > 1||(s.size()==1&&s[0]=='.'))
+        return false;
+    if (cnt == s.size())
+        return true;
+    else
+        return false;
+
+}
+bool checkoctal(std::string s)
+{
+    int cnt = 0, cnt2 = 0;
+    for (int i = 0; i < s.size(); i++) {
+        if ((s[i] >= 48 && s[i] < 56) || s[i] == '.')
+            cnt++;
+        if (s[i] == '.')
+            cnt2++;
+    }
+    if (cnt2 > 1 || (s.size() == 1 && s[0] == '.'))
+        return false;
+    if (cnt == s.size())
+        return true;
+    else
+        return false;
+}
+bool checkhex(std::string s)
+{
+    int cnt = 0, cnt2 = 0;
+    for (int i = 0; i < s.size(); i++) {
+        if ((s[i] >= 48 && s[i] <= 70) || s[i] == '.')
+            cnt++;
+        if (s[i] == '.')
+            cnt2++;
+    }
+    if (cnt2 > 1 || (s.size() == 1 && s[0] == '.'))
+        return false;
+    if (cnt == s.size())
+        return true;
+    else
+        return false; 
+}
+bool checkdecimal(std::string s)
+{
+    int cnt = 0, cnt2 = 0;
+    for (int i = 0; i < s.size(); i++) {
+        if ((s[i] >= 48 && s[i] <= 57) || s[i] == '.')
+            cnt++;
+        if (s[i] == '.')
+            cnt2++;
+    }
+    if (cnt2 > 1 || (s.size() == 1 && s[0] == '.'))
+        return false;
+    if (cnt == s.size() )
+        return true;
+    else
+        return false; 
+}
 std::string repNum(int pos, int n, std::string s) {
     std::string zero = "0", one = "1";
     bool flag = false;
@@ -141,12 +206,10 @@ std::string getFunctionFromTruthTable(std::string output) {
     }
     return function;
 }
-std::string convertDecimalToHexDecimal(double number) 
+std::string convertDecimalToHexDecimal(long long integer_part, double fractional_part )
 { 
     std::string hex = "0123456789ABCDEF";
-    std::string hex_number_int = "", hex_number_frac = "";
-    long long integer_part = number;
-    double fractional_part = number - integer_part; 
+    std::string hex_number_int = "", hex_number_frac = ""; 
     while (integer_part) {
         // take number % 16 give me (0:15) idx from string hex above
         hex_number_int += hex[integer_part % 16];
@@ -172,6 +235,39 @@ std::string convertDecimalToHexDecimal(double number)
         } 
     if (check_frac)
         result += "." + hex_number_frac; 
+    return result;
+}
+std::string convertDecimalToHexDecimal(double number)
+{
+    std::string hex = "0123456789ABCDEF";
+    std::string hex_number_int = "", hex_number_frac = ""; 
+    int integer_part = (int)number;
+    double fractional_part = number - integer_part;
+    while (integer_part) {
+        // take number % 16 give me (0:15) idx from string hex above
+        hex_number_int += hex[integer_part % 16];
+        integer_part /= 16;
+    }
+    // calculate fractional part to some precision 10^-13
+    int t = 10;
+    while (t-- && fractional_part != 0) {
+        fractional_part *= 16;
+        hex_number_frac += hex[(int)fractional_part];
+        if ((int)fractional_part <= 15)
+            fractional_part -= (int)fractional_part;
+        if (fractional_part >= 16)
+            break;
+    }
+    reverse(hex_number_int.begin(), hex_number_int.end());
+    std::string result = hex_number_int;
+    bool check_frac = false;
+    for (int i = 0; i < hex_number_frac.size(); i++)
+        if (hex_number_frac[i] != 0) {
+            check_frac = true;
+            break;
+        }
+    if (check_frac)
+        result += "." + hex_number_frac;
     return result;
 }
 double convertHexDecimalToDecimal(std::string number)
@@ -201,12 +297,40 @@ double convertHexDecimalToDecimal(std::string number)
         decimal_number_int += pow(16, i) * ((int)integer_part[i]); 
     return decimal_number_int + decimal_number_frac;
 }
-
 std::string convertDecimalToOctal(double number)
+{
+    std::string octal_number_int = "", octal_number_frac = ""; 
+    int integer_part = (int)number;
+    double fractional_part = number - integer_part;
+    while (integer_part) {
+        octal_number_int += (integer_part % 8 + '0');
+        integer_part /= 8;
+    }
+    int t = 10;
+    while (t-- && fractional_part != 0) {
+        fractional_part *= 8;
+        octal_number_frac += ((int)fractional_part + '0');
+        if ((int)fractional_part <= 7)
+            fractional_part -= (int)fractional_part;
+        if (fractional_part >= 8)
+            break;
+    }
+    reverse(octal_number_int.begin(), octal_number_int.end());
+    std::string result = octal_number_int;
+    bool check_frac = false;
+    for (int i = 0; i < octal_number_frac.size(); i++)
+        if (octal_number_frac[i] != 0) {
+            check_frac = true;
+            break;
+        }
+    if (check_frac)
+        result += "." + octal_number_frac;
+    return result;
+}
+
+std::string convertDecimalToOctal(long long integer_part, double fractional_part)
 { 
-    std::string octal_number_int = "", octal_number_frac = "";
-    long long integer_part = number;
-    double fractional_part = number - integer_part; 
+    std::string octal_number_int = "", octal_number_frac = ""; 
     while (integer_part) {
         octal_number_int += (integer_part % 8 + '0');
         integer_part /= 8;
@@ -271,17 +395,15 @@ double convertBinaryToDecimal(std::string number)
     // combine the whole number
     return decimal_number_int + decimal_number_frac;
 }
-std::string convertDecimalToBinary(double number) 
+std::string convertDecimalToBinary(long long integer_part, double fractional_part)
 {
 
-    std::string binary_number_int = "", binary_number_frac = "";
-    int integer_part = (int)number;
-    double fractional_part = number - integer_part; 
+    std::string binary_number_int = "", binary_number_frac = ""; 
     //calculate integral part
     while (integer_part) {
         binary_number_int += (integer_part % 2 + '0');
         integer_part /= 2;
-    } 
+    }
     // calculate fractional part to some precision 10^-4
     int t = 10;
     while (t-- && fractional_part != 0) {
@@ -292,11 +414,40 @@ std::string convertDecimalToBinary(double number)
             fractional_part -= 1;
         if (fractional_part >= 2)
             break;
-    } 
-    reverse(binary_number_int.begin(), binary_number_int.end()); 
+    }
+    reverse(binary_number_int.begin(), binary_number_int.end());
     std::string result = binary_number_int;
     //add . sign if the number contain fraction
     if (binary_number_frac.find('1') != std::string::npos)
-        result += "." + binary_number_frac; 
+        result += "." + binary_number_frac;
+    return result;
+}
+std::string convertDecimalToBinary(double number)
+{
+
+    std::string binary_number_int = "", binary_number_frac = "";
+    int integer_part = (int)number;
+    double fractional_part = number - integer_part;
+    //calculate integral part
+    while (integer_part) {
+        binary_number_int += (integer_part % 2 + '0');
+        integer_part /= 2;
+    }
+    // calculate fractional part to some precision 10^-4
+    int t = 10;
+    while (t-- && fractional_part != 0) {
+        fractional_part *= 2;
+        binary_number_frac += ((int)fractional_part + '0');
+
+        if ((int)fractional_part == 1)
+            fractional_part -= 1;
+        if (fractional_part >= 2)
+            break;
+    }
+    reverse(binary_number_int.begin(), binary_number_int.end());
+    std::string result = binary_number_int;
+    //add . sign if the number contain fraction
+    if (binary_number_frac.find('1') != std::string::npos)
+        result += "." + binary_number_frac;
     return result;
 }

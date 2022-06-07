@@ -30,6 +30,14 @@ bool check(std::string s);
 std::string repNum(int pos, int n, std::string s); 
 std::string replaceAsterisk(std::string s);
 std::string replacePlus(std::string s);
+std::string convertDecimalToHexDecimal(long long integer_part, double fractional_part);
+std::string convertDecimalToBinary(long long integer_part, double fractional_part);
+std::string convertDecimalToOctal(long long integer_part, double fractional_part);
+
+bool checkbinary(std::string s);
+bool checkoctal(std::string s);
+bool checkhex(std::string s);
+bool checkdecimal(std::string s);
 
 
 #endif
