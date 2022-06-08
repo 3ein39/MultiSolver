@@ -131,18 +131,21 @@ namespace Project3 {
 			this->linkLabel1 = (gcnew System::Windows::Forms::LinkLabel());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->panel10 = (gcnew System::Windows::Forms::Panel());
+			this->label15 = (gcnew System::Windows::Forms::Label());
 			this->linkLabel16 = (gcnew System::Windows::Forms::LinkLabel());
 			this->linkLabel15 = (gcnew System::Windows::Forms::LinkLabel());
 			this->linkLabel14 = (gcnew System::Windows::Forms::LinkLabel());
 			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->panel11 = (gcnew System::Windows::Forms::Panel());
 			this->panel8 = (gcnew System::Windows::Forms::Panel());
+			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->linkLabel13 = (gcnew System::Windows::Forms::LinkLabel());
 			this->linkLabel12 = (gcnew System::Windows::Forms::LinkLabel());
 			this->linkLabel11 = (gcnew System::Windows::Forms::LinkLabel());
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->panel9 = (gcnew System::Windows::Forms::Panel());
 			this->panel6 = (gcnew System::Windows::Forms::Panel());
+			this->label14 = (gcnew System::Windows::Forms::Label());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->linkLabel10 = (gcnew System::Windows::Forms::LinkLabel());
 			this->linkLabel9 = (gcnew System::Windows::Forms::LinkLabel());
@@ -150,12 +153,14 @@ namespace Project3 {
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->panel7 = (gcnew System::Windows::Forms::Panel());
 			this->panel4 = (gcnew System::Windows::Forms::Panel());
+			this->label13 = (gcnew System::Windows::Forms::Label());
 			this->linkLabel7 = (gcnew System::Windows::Forms::LinkLabel());
 			this->linkLabel6 = (gcnew System::Windows::Forms::LinkLabel());
 			this->linkLabel5 = (gcnew System::Windows::Forms::LinkLabel());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->panel5 = (gcnew System::Windows::Forms::Panel());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->label12 = (gcnew System::Windows::Forms::Label());
 			this->linkLabel4 = (gcnew System::Windows::Forms::LinkLabel());
 			this->linkLabel3 = (gcnew System::Windows::Forms::LinkLabel());
 			this->linkLabel2 = (gcnew System::Windows::Forms::LinkLabel());
@@ -164,11 +169,6 @@ namespace Project3 {
 			this->panel12 = (gcnew System::Windows::Forms::Panel());
 			this->linkLabel17 = (gcnew System::Windows::Forms::LinkLabel());
 			this->linkLabel18 = (gcnew System::Windows::Forms::LinkLabel());
-			this->label11 = (gcnew System::Windows::Forms::Label());
-			this->label12 = (gcnew System::Windows::Forms::Label());
-			this->label13 = (gcnew System::Windows::Forms::Label());
-			this->label14 = (gcnew System::Windows::Forms::Label());
-			this->label15 = (gcnew System::Windows::Forms::Label());
 			this->panel1->SuspendLayout();
 			this->panel10->SuspendLayout();
 			this->panel8->SuspendLayout();
@@ -287,6 +287,17 @@ namespace Project3 {
 			this->panel10->Size = System::Drawing::Size(200, 235);
 			this->panel10->TabIndex = 4;
 			// 
+			// label15
+			// 
+			this->label15->AutoSize = true;
+			this->label15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label15->Location = System::Drawing::Point(15, 190);
+			this->label15->Name = L"label15";
+			this->label15->Size = System::Drawing::Size(168, 45);
+			this->label15->TabIndex = 8;
+			this->label15->Text = L"FCI Fayoum university student\r\nJr. Web developer\r\nAlgorithm maker & coder";
+			// 
 			// linkLabel16
 			// 
 			this->linkLabel16->AutoSize = true;
@@ -348,6 +359,18 @@ namespace Project3 {
 			this->panel8->Name = L"panel8";
 			this->panel8->Size = System::Drawing::Size(200, 245);
 			this->panel8->TabIndex = 3;
+			// 
+			// label11
+			// 
+			this->label11->AutoSize = true;
+			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label11->Location = System::Drawing::Point(9, 199);
+			this->label11->Name = L"label11";
+			this->label11->Size = System::Drawing::Size(188, 45);
+			this->label11->TabIndex = 8;
+			this->label11->Text = L"FCI Fayoum university student\r\nJr. Embedded Software Engineer\r\nGUI & Algorithm co"
+				L"der";
 			// 
 			// linkLabel13
 			// 
@@ -414,6 +437,18 @@ namespace Project3 {
 			this->panel6->Name = L"panel6";
 			this->panel6->Size = System::Drawing::Size(171, 253);
 			this->panel6->TabIndex = 2;
+			// 
+			// label14
+			// 
+			this->label14->AutoSize = true;
+			this->label14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label14->Location = System::Drawing::Point(2, 201);
+			this->label14->Name = L"label14";
+			this->label14->Size = System::Drawing::Size(168, 45);
+			this->label14->TabIndex = 7;
+			this->label14->Text = L"FCI Fayoum university student\r\nJr competitive programmer\r\nAlgorithm maker & coder"
+				L"";
 			// 
 			// button2
 			// 
@@ -492,6 +527,18 @@ namespace Project3 {
 			this->panel4->Size = System::Drawing::Size(177, 244);
 			this->panel4->TabIndex = 1;
 			// 
+			// label13
+			// 
+			this->label13->AutoSize = true;
+			this->label13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label13->Location = System::Drawing::Point(9, 196);
+			this->label13->Name = L"label13";
+			this->label13->Size = System::Drawing::Size(162, 39);
+			this->label13->TabIndex = 8;
+			this->label13->Text = L"FCI Fayoum university student\r\nJr. Embedded Software Engineer\r\nGUI & Algorithm co"
+				L"der";
+			// 
 			// linkLabel7
 			// 
 			this->linkLabel7->AutoSize = true;
@@ -555,6 +602,17 @@ namespace Project3 {
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(183, 244);
 			this->panel2->TabIndex = 0;
+			// 
+			// label12
+			// 
+			this->label12->AutoSize = true;
+			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label12->Location = System::Drawing::Point(6, 192);
+			this->label12->Name = L"label12";
+			this->label12->Size = System::Drawing::Size(168, 45);
+			this->label12->TabIndex = 0;
+			this->label12->Text = L"FCI Fayoum university student\r\nJr. Penetration Tester\r\nAlgorithm maker & coder";
 			// 
 			// linkLabel4
 			// 
@@ -638,64 +696,7 @@ namespace Project3 {
 			this->linkLabel18->TabIndex = 12;
 			this->linkLabel18->TabStop = true;
 			this->linkLabel18->Text = L"Help !";
-			// 
-			// label11
-			// 
-			this->label11->AutoSize = true;
-			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label11->Location = System::Drawing::Point(9, 199);
-			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(188, 45);
-			this->label11->TabIndex = 8;
-			this->label11->Text = L"FCI Fayoum university student\r\nJr. Embedded Software Engineer\r\nGUI & Algorithm co"
-				L"der";
-			// 
-			// label12
-			// 
-			this->label12->AutoSize = true;
-			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label12->Location = System::Drawing::Point(6, 192);
-			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(168, 45);
-			this->label12->TabIndex = 0;
-			this->label12->Text = L"FCI Fayoum university student\r\nJr. Penetration Tester\r\nAlgorithm maker & coder";
-			// 
-			// label13
-			// 
-			this->label13->AutoSize = true;
-			this->label13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label13->Location = System::Drawing::Point(9, 196);
-			this->label13->Name = L"label13";
-			this->label13->Size = System::Drawing::Size(162, 39);
-			this->label13->TabIndex = 8;
-			this->label13->Text = L"FCI Fayoum university student\r\nJr. Embedded Software Engineer\r\nGUI & Algorithm co"
-				L"der";
-			// 
-			// label14
-			// 
-			this->label14->AutoSize = true;
-			this->label14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label14->Location = System::Drawing::Point(2, 201);
-			this->label14->Name = L"label14";
-			this->label14->Size = System::Drawing::Size(168, 45);
-			this->label14->TabIndex = 7;
-			this->label14->Text = L"FCI Fayoum university student\r\nJr competitive programmer\r\nAlgorithm maker & coder"
-				L"";
-			// 
-			// label15
-			// 
-			this->label15->AutoSize = true;
-			this->label15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label15->Location = System::Drawing::Point(15, 190);
-			this->label15->Name = L"label15";
-			this->label15->Size = System::Drawing::Size(168, 45);
-			this->label15->TabIndex = 8;
-			this->label15->Text = L"FCI Fayoum university student\r\nJr. Web developer\r\nAlgorithm maker & coder";
+			this->linkLabel18->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &MyForm::linkLabel18_LinkClicked);
 			// 
 			// MyForm
 			// 
@@ -830,6 +831,9 @@ private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e
 	 
 	panel12->Show();
 	panel1->Hide();
+}
+private: System::Void linkLabel18_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
+	Process::Start("C:\\Users\\shahd\\Documents\\project\\1654655938525.jpg");
 }
 };
 }

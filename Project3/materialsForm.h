@@ -2065,28 +2065,28 @@ private: System::Void linkLabel24_LinkClicked(System::Object^ sender, System::Wi
 
 }
 private: System::Void button19_Click(System::Object^ sender, System::EventArgs^ e) {
-	Process::Start("hC:\\Users\\shahd\\Documents\\project\\lecture1.pdf");
+	Process::Start("C:\\Users\\shahd\\Documents\\project\\lecture1.pdf");
 
 }
 private: System::Void button20_Click(System::Object^ sender, System::EventArgs^ e) {
-	Process::Start("hC:\\Users\\shahd\\Documents\\project\\lecture2.pdf");
+	Process::Start("C:\\Users\\shahd\\Documents\\project\\lecture2.pdf");
 
 
 }
 private: System::Void button21_Click(System::Object^ sender, System::EventArgs^ e) {
-	Process::Start("hC:\\Users\\shahd\\Documents\\project\\lecture3.pdf");
+	Process::Start("C:\\Users\\shahd\\Documents\\project\\lecture3.pdf");
 
 }
 private: System::Void button22_Click(System::Object^ sender, System::EventArgs^ e) {
-	Process::Start("hC:\\Users\\shahd\\Documents\\project\\lecture4.pdf");
+	Process::Start("C:\\Users\\shahd\\Documents\\project\\lecture4.pdf");
 
 }
 private: System::Void button23_Click(System::Object^ sender, System::EventArgs^ e) {
-	Process::Start("hC:\\Users\\shahd\\Documents\\project\\lecture5.pdf");
+	Process::Start("C:\\Users\\shahd\\Documents\\project\\lecture5.pdf");
 
 }
 private: System::Void button24_Click(System::Object^ sender, System::EventArgs^ e) {
-	Process::Start("hC:\\Users\\shahd\\Documents\\project\\lecture 6 .pdf");
+	Process::Start("C:\\Users\\shahd\\Documents\\project\\lecture 6 .pdf");
 
 }
 private: System::Void button10_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -2135,7 +2135,7 @@ private: System::Void linkLabel25_LinkClicked(System::Object^ sender, System::Wi
 
 }
 private: System::Void button25_Click(System::Object^ sender, System::EventArgs^ e) {
-	Process::Start("hC:\\Users\\shahd\\Documents\\project\\human rights.pdf"); 
+	Process::Start("C:\\Users\\shahd\\Documents\\project\\human rigths.pdf"); 
 
 }
 private: System::Void button12_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -2159,7 +2159,7 @@ private: System::Void button12_Click(System::Object^ sender, System::EventArgs^ 
 	panel18->Show();
 }
 private: System::Void button26_Click(System::Object^ sender, System::EventArgs^ e) {
-	Process::Start("hC:\\Users\\shahd\\Documents\\project\\computing.pdf");
+	Process::Start("C:\\Users\\shahd\\Documents\\project\\computing.pdf");
 
 
 }
@@ -2219,7 +2219,7 @@ private: System::Void linkLabel27_LinkClicked(System::Object^ sender, System::Wi
 
 }
 private: System::Void button27_Click(System::Object^ sender, System::EventArgs^ e) {
-	Process::Start("hC:\\Users\\shahd\\Documents\\project\\nazaha.pdf");
+	Process::Start("C:\\Users\\shahd\\Documents\\project\\nazaha.pdf");
 }
 };
 }
