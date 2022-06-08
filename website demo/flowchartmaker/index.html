@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Flowchart</title>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="choose">
+            <h2> 
+                Select:
+            </h2>
+            <div>
+                <input type="radio" name="shape" value="rectangle" checked>
+                <label for="rectangle"><span class="small-rect shape rectangle"></span> Process</label>
+            </div>
+            <div>
+                <input type="radio" name="shape" value="diamond">
+                <label for="diamond"><span class="small-box shape diamond"></span> Decission</label>
+            </div>
+            <div>
+                <input type="radio" name="shape" value="parallelogram">
+                <label for="parallelogram"><span class="small-rect shape parallelogram"></span> Input</label>
+            </div>
+        </div>
+        
+        <div class="text">
+            
+            <input id="text" type="text">
+            <button type="button">End</button>
+            <button type="reset">Reset</button>
+        </div>
+
+        <div id="body" class="body">
+            <div>
+                <span class="center-abs normal-box shape circle"></span>
+                <p>
+                    Start
+                </p>
+            </div>
+            <div class="add">
+                <span class="center-abs">+</span>
+                <p></p>
+            </div>
+        </div>
+
+    </div>
+    
+
+    <script src="main.js"></script>
+</body>
+</html>
